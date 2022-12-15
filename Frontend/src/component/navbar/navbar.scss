@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5px 68px 6px 141px;
+
+  &__img {
+    width: 70px;
+    height: 65px;
+  }
+
+  &__nav {
+    & > a {
+      font-family: "Chau Philomene One";
+      font-size: 16px;
+      line-height: 22.4px;
+      margin-left: 32px;
+
+      &:hover {
+        color: #df1382;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        cursor: pointer;
+        padding: 8px 16px;
+        color: #ffffff;
+        background-color: #fec10d;
+        border-radius: 12px;
+      }
+    }
+  }
+}
