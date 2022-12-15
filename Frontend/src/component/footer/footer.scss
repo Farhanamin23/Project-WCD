@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap");
+
+.footer {
+  background: #df1382;
+  color: #ffffff;
+  padding: 62px 101px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 350px;
+
+  &__img {
+    width: 200px;
+  }
+
+  &__hq {
+    font-family: "Titillium Web";
+    width: 210px;
+    height: 149px;
+
+    & > h1 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 26.5px;
+    }
+
+    & > p {
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        font-size: 14px;
+        font-weight: 900;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__join {
+    font-family: "Chau Philomene One";
+    line-height: 20px;
+    font-size: 16px;
+
+    & > p {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  &__about {
+    font-family: "Chau Philomene One";
+    line-height: 20px;
+
+    & > h1 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    & > p {
+      font-size: 16px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  &__socmed {
+    display: flex;
+    flex-direction: column;
+
+    &--title {
+      font-size: 24px;
+      font-family: "Chau Philomene One";
+      margin-bottom: 24px;
+      line-height: 20px;
+    }
+
+    &--img {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 32px;
+
+      & > a {
+        margin-right: 24px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+
+      & > img {
+        width: 32px;
+      }
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      & > label {
+        font-size: 14px;
+        font-family: "Inter";
+        margin-bottom: 6px;
+      }
+
+      & > input {
+        font-family: "Inter";
+        padding: 10px 14px;
+        background-color: #ffffff;
+        border: 1px solid #e4e7ec;
+        border-radius: 12px;
+        width: 328px;
+        height: 44px;
+        font-size: 16px;
+        color: #667085;
+        margin-bottom: 12px;
+      }
+
+      & > button {
+        font-family: "Chau Philomene One";
+        padding: 8px 14px;
+        background: #fec10d;
+        border-radius: 12px;
+        line-height: 20px;
+        font-size: 16px;
+        color: #ffffff;
+      }
+    }
+  }
+}
