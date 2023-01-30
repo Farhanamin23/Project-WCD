@@ -17,7 +17,8 @@ module.exports = {
         'p-blue': '#488BC9',
         'p-gray': '#667085',
         'p-light-gray': '#E4E7EC',
-        'p-pink': '#FFD8ED'
+        'p-pink': '#FFD8ED',
+        'p-neutral': '#344054'
       },
       backgroundImage: {
         'dot-pattern': "url('/public/img/bg-dot.png')",

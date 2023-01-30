@@ -7,8 +7,13 @@ import "swiper/css/pagination";
 
 import "./styles.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ScreenContext } from "../../../../App";
+import { ScreenSize } from "../../../../utils/utils";
 
 const LatestNews = () => {
+   const screenSize = useContext(ScreenContext);
+
    const events = [
       {
          image: 'https://picsum.photos/300/450',
@@ -38,24 +43,24 @@ const LatestNews = () => {
                initialSlide={1}
                loop={true}
                loopFillGroupWithBlank={false}
-               slidesPerView={'auto'}
+               slidesPerView={screenSize == ScreenSize.sm || screenSize == ScreenSize.md ? 1 : 3}
                centeredSlides={true}
-               spaceBetween={5}
+               spaceBetween={0}
                navigation={true}
                modules={[Pagination, Navigation]}
-               className='mt-[50px] event-list'
+               className='mt-[32px] md:mt-[50px] event-list'
             >
                {
                   events.map(event => {
                      return (
                         <SwiperSlide>
-                           <div className="max-w-[318px] rounded-[20px] overflow-hidden my-[30px]">
+                           <div className="max-w-[201px] md:max-w-[318px] rounded-[20px] overflow-hidden my-[30px]">
                               <Link to="">
-                                 <div className={`h-[220px] bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${event.image})` }}></div>
-                                 <div className="bg-white py-[28px] px-[31px] text-left">
-                                    <p className="font-primary text-[14px] mb-[10px] leading-[25px] text-p-primary">{event.title}</p>
-                                    <p className="font-primary text-[24px] mb-[12px] leading-[25px]">{event.title}</p>
-                                    <p className="font-secondary text-[16px]">{event.shortDesc}</p>
+                                 <div className={`h-[83px] md:h-[220px] bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${event.image})` }}></div>
+                                 <div className="bg-white py-[10px] md:py-[28px] px-[16px] md:px-[31px] text-left">
+                                    <p className="font-primary text-[10px] md:text-[14px] mb-[10px] leading-[17px] md:leading-[25px] text-p-primary">{event.title}</p>
+                                    <p className="font-primary text-[14px] md:text-[24px] mb-[12px] leading-[14px] md:leading-[25px]">{event.title}</p>
+                                    <p className="font-secondary text-[12px] md:text-[16px]">{event.shortDesc}</p>
                                  </div>
                               </Link>
                            </div>

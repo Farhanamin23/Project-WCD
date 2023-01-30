@@ -11,15 +11,18 @@ import './swiperStyle.css';
 const Home: React.FC = () => {
   
   return (
-    <main>
+    <main className='pt-14 lg:pt-[75px]'>
       <div>
       <HomeBanner />
-      <SearchEvent />
-      <LatestNews />
-      <Gallery />
+      <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] bg-cover bg-no-repeat'>
+        <SearchEvent />
+        <LatestNews />
+        <Gallery />
+      </div>
+     
       <NearestEvent />
       <Founder />
-      <Partner />
+      {/* <Partner /> */}
       </div>
       
 

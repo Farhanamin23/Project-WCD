@@ -1,26 +1,59 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { logo } from '../assets'
-import ActionButton from './actionButton'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { iconMenuHamburger, logo } from '../assets';
+import ActionButton from './actionButton';
 
 const Navbar: React.FC = () => {
-  return (
-    <nav className="flex ">
-      <div className="mx-auto flex flex-row justify-between items-center py-[5px] w-full max-w-[1238px]">
-        <a className="ml-8"><img src={logo} /></a>
-        <div className="font-primary flex flex-row items-center">
-          <Link className="px-[16px]" to="/">Home</Link>
-          <Link className="px-[16px]" to="/about-us">About us</Link>
-          <Link className="px-[16px]" to="/program">Program</Link>
-          <Link className="px-[16px]" to="/donate">Donate</Link>
-          <Link className="px-[16px]" to="/contact-us">Contact Us</Link>
-          <Link className="px-[16px]" to="/contact-us">
-            <ActionButton title='Join the movement'/>
-          </Link>
-        </div>
-      </div>
-    </nav>
-  )
+   const [isOpenNavBar, setToggleNavbar] = useState<Boolean>(false);
+   const navLinks = [
+      { to: "/", name: "Home" },
+      { to: "/about-us", name: "About us" },
+      { to: "/program", name: "Program" },
+      { to: "/", name: "Event" },
+      { to: "/donate", name: "Donate" },
+      { to: "/", name: "Article" },
+      { to: "/contact-us", name: "Contact Us" }
+   ];
+
+   return (
+      <nav className="flex fixed w-[100%] bg-white top-0 z-40">
+         <div className="mx-auto flex flex-row justify-between items-center py-[5px] w-full max-w-[1238px]">
+            <a className="ml-8"><img src={logo} className={'w-14 h-[52px] lg:w-[70px] lg:h-[65px]'}/></a>
+            <div className="flex font-primary flex-row items-center">
+               <div className="hidden lg:flex font-primary flex-row items-center">
+               {
+                  navLinks.map(link => (
+                     <Link className="px-[16px]" to={link.to}>{link.name}</Link>
+                  ))
+               }
+               </div>
+
+               <div className='flex flex-row items-center'>
+               <Link className="px-[16px] z-10" to="/contact-us">
+                  <ActionButton title='Join the movement' />
+               </Link>
+               
+               <a onClick={() => setToggleNavbar(!isOpenNavBar)} className='lg:hidden mr-[25px] z-10'>
+                  <img src={iconMenuHamburger} className="w-[21px] h-[12px]"/>
+               </a>
+
+               <div className={`lg:hidden flex flex-col bg-p-primary ${isOpenNavBar ? 'ml-[100vw]' : 'ml-auto'} w-[100vh] fixed h-[100%] pt-[80px] top-0 transition-all`}>
+               {
+                  navLinks.map(link => (
+                     <Link className="px-[16px] text-white text-[16px] py-[16px] leading-6" to={link.to}>{link.name}</Link>
+                  ))
+               }
+               </div>
+               </div>
+               
+            </div>
+         </div>
+      </nav>
+   )
 }
 
-export default Navbar
+export default Navbar;
+
+interface InavBarState {
+   isOpenSideBar: boolean;
+}

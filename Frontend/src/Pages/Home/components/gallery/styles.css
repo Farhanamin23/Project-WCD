@@ -1,29 +1,82 @@
 .gallery-section .swiper-slide-active>div {
-    width: 372px;
-    height: 293px;
-    padding: 7px 7px 38px 7px;
-    background-color: white;
-    border: solid 3px #DF1382;
-    border-radius: 7px;
-    box-shadow: 2px 1px 10.9443px rgba(0, 0, 0, 0.15), 5px 14px 32.833px rgba(0, 0, 0, 0.2);
+   width: auto;
+   padding: 7px 7px 38px 7px;
+   background-color: white;
+   border: solid 3px #DF1382;
+   border-radius: 7px;
+   box-shadow: 2px 1px 10.9443px rgba(0, 0, 0, 0.15), 5px 14px 32.833px rgba(0, 0, 0, 0.2);
 }
 
-.video-list .swiper-slide-active > div {
-    width: 367px;
-    height: 243px;
-    background-color: #DF1382;
-    border: solid 3px #DF1382;
-    border-radius: 7px;
+.gallery-section .swiper-slide-active>div>div {
+   width: 357px;
+   height: 247px;
 }
 
-.video-list .swiper-slide > div > .video > iframe {
-    height: 112px;
+.video-list .swiper-slide-active>div {
+   height: 243px;
+   background-color: #DF1382;
+   border: solid 3px #DF1382;
+   border-radius: 7px;
 }
 
-.video-list .swiper-slide-active > div > .video > iframe {
-    height: 198px;
+.video-list .swiper-slide>div>.video>iframe {
+   height: 112px;
 }
 
-.video-list .swiper-slide-active > div > p {
-    display: none;
+.video-list .swiper-slide-active>div>.video>iframe {
+   height: 198px;
+}
+
+.video-list .swiper-slide-active>div>p {
+   display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+   .gallery-section .swiper-slide-active>div {
+      padding: 2px 2px 13px 2px;
+      background-color: white;
+      border-radius: 2px;
+   }
+
+   .gallery-section .swiper-slide-active>div>div {
+      width: 36vw;
+      height: 28vw;
+   }
+
+   .gallery-section .swiper-slide-next>div {
+      transform: translateX(-50px);
+      margin-right: 0;
+   }
+
+   .gallery-section .swiper-slide-prev>div {
+      transform: translateX(50px);
+      margin-right: 0;
+   }
+   .video-list .swiper-slide>div {
+      height: 19vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+   }
+
+   .video-list .swiper-slide-active>div {
+      background-color: #DF1382;
+      border: solid 3px #DF1382;
+      border-radius: 7px;
+      height: 23vw;
+   }
+
+   .video-list .swiper-slide>div>.video {
+      height: 100%;
+      overflow: hidden;
+   }
+
+   .video-list .swiper-slide>div>.video>iframe {
+      height: 100%;
+   }
+
+   .video-list .swiper-slide-active>div>.video>iframe {
+      height: 100%;
+   }
 }
