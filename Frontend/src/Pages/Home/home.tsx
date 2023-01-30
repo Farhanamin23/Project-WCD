@@ -1,14 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Founder from './components/founder/founder';
+import Gallery from './components/gallery/gallery';
+import LatestNews from './components/latestNews/latestNews';
+import NearestEvent from './components/nearestEvent/nearestEvent';
+import Partner from './components/partner/partner';
+import SearchEvent from './components/searchEvent/searchEvent';
+import HomeBanner from './components/homeBanner/homeBanner';
+import './swiperStyle.css';
 
 const Home: React.FC = () => {
+  
   return (
-    <>
-    <h1>
-      Welcome To Home Page Boss 
-      <Link to={'/login'}>Not have a account ser? <u>Register</u></Link>
-    </h1>
-    </>
+    <main className='pt-14 lg:pt-[75px]'>
+      <div>
+      <HomeBanner />
+      <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] bg-cover bg-no-repeat'>
+        <SearchEvent />
+        <LatestNews />
+        <Gallery />
+      </div>
+     
+      <NearestEvent />
+      <Founder />
+      {/* <Partner /> */}
+      </div>
+      
+
+    </main>
   )
 }
 

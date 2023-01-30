@@ -1,23 +1,41 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import {Login , Register, Home} from './Pages/index'
+import React, { createContext, useEffect, useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Footer from './component/footer'
+import Navbar from './component/navbar'
+import { Home, ContactUs } from './Pages/index'
+import { getSreenSize, ScreenSize } from './utils/utils'
 
-const App:React.FC = () => {
+export const ScreenContext = createContext(getSreenSize());
+
+const App: React.FC = () => {
+  const [screenSize, setScreenSize] = useState<ScreenSize>(getSreenSize());
+  useEffect(() => {
+    window.addEventListener("resize", function (event) {
+      // console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
+      setScreenSize(getSreenSize())
+    })
+  }, [])
+
   return (
-    <>
-      <Router>
-        <Routes>
-        <Route path='/' element={<Home />} /> 
-        <Route path='/login' element={<Login/>} />
-        <Route path='/register' element={<Register/>} />
-        </Routes>
-      </Router>
-    </>
+    <ScreenContext.Provider value={screenSize}>
+      <div className='min-h-[100vh]'>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/contact-us' element={<ContactUs />} />
+          </Routes>
+          <Navbar />
+
+          {/* <Footer /> */}
+        </Router>
+      </div>
+    </ScreenContext.Provider>
+
   )
 }
 
 // export function ProtectionRouter(props: any) {
-  
+
 //   if(localStorage.getItem('project-salt'))
 //   {
 //     return props.children
