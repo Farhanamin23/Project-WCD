@@ -16,7 +16,9 @@ const TextInput: React.FC<TextInputProps> = ({ type = "text", label, id, placeho
     const additionalProps = {
         ...(type === "telephone" && { maxlength: '12' }),
         ...(type === "email" && { pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" }),
-        ...(type === "list" && { list: listRefName })
+        ...(type === "list" && { list: listRefName }),
+        ...(type === "currency" && { type: 'number' }),
+        ...(type === "telephone" && { type: 'number' })
     }
 
     return (
