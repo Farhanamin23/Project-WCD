@@ -72,7 +72,7 @@ const LatestNews = () => {
 
          </div>
       </section>
-   )
-}
+   );
+};
 
 export default LatestNews;

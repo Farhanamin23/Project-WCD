@@ -27,7 +27,7 @@ const App: React.FC = () => {
           </Routes>
           <Navbar />
 
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </div>
     </ScreenContext.Provider>

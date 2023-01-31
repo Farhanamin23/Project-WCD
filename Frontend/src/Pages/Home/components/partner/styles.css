@@ -1,0 +1,15 @@
+.partnerList .swiper-slide {
+    width: auto;
+}
+
+.partnerList .swiper-button-prev {
+    left: 0;
+}
+
+.partnerList .swiper-button-next {
+    right: 0;
+}
+
+.partnerList {
+    --swiper-navigation-color: white;
+}
