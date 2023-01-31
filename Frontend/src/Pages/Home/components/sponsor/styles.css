@@ -1,0 +1,15 @@
+.sponsorList .swiper-slide {
+   width: auto;
+}
+
+.sponsorList .swiper-button-prev {
+   left: 0;
+}
+
+.sponsorList .swiper-button-next {
+   right: 0;
+}
+
+.sponsorList {
+   --swiper-navigation-color: #488BC9;
+}
