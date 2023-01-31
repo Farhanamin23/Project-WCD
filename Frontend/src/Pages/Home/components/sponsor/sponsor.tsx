@@ -5,10 +5,10 @@ import { ScreenContext } from '../../../../App';
 import { iconPartnerBreakFree, iconPartnerUnesco, iconPartnerUNHabitat, iconPartnerUNV } from '../../../../assets';
 import './styles.css';
 
-const Partner: React.FC = () => {
+const Sponsor: React.FC = () => {
 
    const screenSize = useContext(ScreenContext);
-   const partner = [
+   const sponsor = [
       {
          icon: iconPartnerUnesco,
          width: 151,
@@ -33,8 +33,8 @@ const Partner: React.FC = () => {
 
    return (
       <section>
-         <div className='bg-p-blue pt-[23px] md:pt-[54px] pb-[37px] md:pb-[94px] partnerList '>
-            <h3 className='text-center font-primary text-[16px] md:text-[48px] mb-[26px] md:mb-[61px] text-white'>Global Partner</h3>
+         <div className='bg-white pt-[23px] md:pt-[54px] pb-[37px] md:pb-[94px] sponsorList '>
+            <h3 className='text-center font-primary text-[16px] md:text-[48px] mb-[26px] md:mb-[61px] text-p-blue'>National Sponsor</h3>
             <div className='flex flex-row items-center justify-between md:max-w-[1344px] overflow-visible scrollbar-hide w-[90%] mx-auto'>
                <Swiper
                   slidesPerView={'auto'}
@@ -44,7 +44,7 @@ const Partner: React.FC = () => {
                   className='md:mt-[50px]'
                >
                   {
-                     partner.map((item, idx) => (
+                     sponsor.map((item, idx) => (
                         <SwiperSlide>
                            <img src={item.icon} className="mx-[30px] max-h-[34px] max-w-[70vw] md:max-w-[none] md:max-h-[none] aspect-auto" />
                         </SwiperSlide>
@@ -57,4 +57,4 @@ const Partner: React.FC = () => {
    );
 };
 
-export default Partner
+export default Sponsor

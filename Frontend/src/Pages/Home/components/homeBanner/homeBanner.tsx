@@ -51,7 +51,7 @@ const homeBanner = () => {
             </div>
          </div>
       </section>
-   )
-}
+   );
+};
 
 export default homeBanner;
