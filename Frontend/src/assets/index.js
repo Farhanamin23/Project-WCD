@@ -1,5 +1,6 @@
 export const logo = require('./logo.png');
 export const logoBig = require('./logo-big.png');
+export const logoSalt = require('./logo-salt.png');
 export const iconInstagram = require('./icon-instagram.png');
 export const iconTwitter = require('./icon-twitter.png');
 export const iconFacebook = require('./icon-facebook.png');

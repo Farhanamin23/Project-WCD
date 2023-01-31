@@ -1,4 +1,5 @@
 import ActionButton from "../../../../component/actionButton";
+import PhoneInput from "../../../../component/phoneInput";
 import SectionTitle from "../../../../component/sectionTitle";
 import TextInput from "../../../../component/textInput";
 
@@ -39,23 +40,16 @@ const NearestEvent = () => {
                                  labelTextStyle="font-primary text-[12px] text-white md:text-[14px] mb-[6px]"
                                  inputTextStyle="text-[12px] text-p-gray md:text-[16px]"
                               />
-                              {/* <div className="flex flex-col font-tertiary mb-[24px]">
-                                 <label className="text-[14px] text-white mb-[6px]">Name</label>
-                                 <input name="name" placeholder="John Doe" className="rounded-[12px] w-[100%] py-[10px] px-[14px] text-p-gray border-p-light-gray border-1 outline-none" />
-                              </div> */}
-                              <div className="flex flex-col font-tertiary mb-[24px]">
-                                 <label className="text-[14px] text-white mb-[6px]">Email</label>
-                                 <input type='email' name="email" placeholder="johndoe@email.com" className="rounded-[12px] w-[100%] py-[10px] px-[14px] text-p-gray border-p-light-gray border-1 outline-none" />
-                              </div>
-                              <div className="flex flex-col font-tertiary mb-[24px]">
-                                 <label className="text-[14px] text-white mb-[6px]">Mobile Phone</label>
-                                 <div>
-                                    <select className="absolute w-[87px] rounded-[12px] py-[10px] px-[14px] text-p-gray border-p-light-gray border-1 outline-none">
-                                       <option>+62</option>
-                                    </select>
-                                    <input type="tel" name="phone" placeholder="123456789" className="rounded-[12px] w-[100%] py-[10px] pl-[97px] pr-[14px] text-p-gray border-p-light-gray border-1 outline-none" />
-                                 </div>
-                              </div>
+
+                              <TextInput label="Email" placeholder="johndoe@email.com" 
+                                 labelTextStyle="font-primary text-[12px] text-white md:text-[14px] mb-[6px]"
+                                 inputTextStyle="text-[12px] text-p-gray md:text-[16px]"
+                              />
+
+                              <PhoneInput label="Mobile Phone" placeholder="123456789" 
+                                 labelTextStyle="font-primary text-[12px] text-white md:text-[14px] mb-[6px]"
+                                 inputTextStyle="text-[12px] text-p-gray md:text-[16px]" />
+
                               <button onClick={() => { console.log("join event!") }} className="self-center mt-[16px] font-primary">
                                  <ActionButton title='Join the event' />
                               </button>
@@ -67,7 +61,7 @@ const NearestEvent = () => {
             </div>
          </div>
       </section>
-   )
-}
+   );
+};
 
-export default NearestEvent
+export default NearestEvent;

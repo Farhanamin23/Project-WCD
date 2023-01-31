@@ -10,7 +10,6 @@ const TextInput = ({
             <label className={labelTextStyle}>{label}</label>
             <input type={inputType} name="name" placeholder={placeholder} className={`rounded-[12px] w-[100%] py-[10px] px-[14px] border-p-light-gray border-1 outline-none 
                 ${inputTextStyle}` }/>
-                
         </div>
     )
 }
