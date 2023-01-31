@@ -10,7 +10,6 @@ const ContactUs: React.FC = () => {
             <section>
                 <div className="max-w-[1102px] mx-auto flex flex-row items-center">
                     <div className="w-[50%]">
-
                     <img src={bgIndonesiaBersih} />
                     </div>
                     <div className="w-[50%] flex flex-col">
