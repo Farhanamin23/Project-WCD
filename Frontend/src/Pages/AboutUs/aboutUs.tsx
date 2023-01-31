@@ -1,8 +1,5 @@
 import { aboutWcd } from "../../assets";
-import PhoneInput from "../../component/phoneInput";
 import SectionTitle from "../../component/sectionTitle";
-import TextAreaInput from "../../component/textAreaInput";
-import TextInput from "../../component/textInput";
 
 const AboutUs: React.FC = () => {
   return (
@@ -13,6 +10,7 @@ const AboutUs: React.FC = () => {
           <img
             className="mx-auto mt-6 mb-9 sm:w-[809px] sm:h-[455px] sm:my-[79px]"
             src={aboutWcd}
+            alt="about-img"
           />
           <div className="pr-7 pl-7 mx-auto">
             <p className="text-left">
