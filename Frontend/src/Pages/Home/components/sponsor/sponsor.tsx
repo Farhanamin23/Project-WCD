@@ -10,21 +10,25 @@ const Sponsor: React.FC = () => {
    const screenSize = useContext(ScreenContext);
    const sponsor = [
       {
+        id:1,
          icon: iconPartnerUnesco,
          width: 151,
          height: 132
       },
       {
+        id:2,
          icon: iconPartnerBreakFree,
          width: 488,
          height: 67
       },
       {
+        id:3,
          icon: iconPartnerUNHabitat,
          width: 226,
          height: 65
       },
       {
+        id:4,
          icon: iconPartnerUNV,
          width: 122,
          height: 110
@@ -45,7 +49,7 @@ const Sponsor: React.FC = () => {
                >
                   {
                      sponsor.map((item, idx) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={item.id}>
                            <img src={item.icon} className="mx-[30px] max-h-[34px] max-w-[70vw] md:max-w-[none] md:max-h-[none] aspect-auto" />
                         </SwiperSlide>
                      ))

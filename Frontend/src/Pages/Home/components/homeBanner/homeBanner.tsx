@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { findAll } from "../../../../actions/global";
 import { iconProgressHand, iconProgressTrash, iconProgressWorld } from "../../../../assets";
 import ActionButton from "../../../../component/actionButton";
 
-const homeBanner = () => {
+const HomeBanner = () => {
+
+   useEffect(()=> {
+
+      const res = findAll('/banners?populate=*');
+   }, [])
+   
    return (
       <section>
          <div className="min-h-[279px] w-[100%] md:max-h-[80vh] bg-[url(/public/img/bg-turtle.png)] bg-no-repeat bg-cover">
@@ -54,4 +62,4 @@ const homeBanner = () => {
    );
 };
 
-export default homeBanner;
+export default HomeBanner;

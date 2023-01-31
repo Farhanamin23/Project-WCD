@@ -1,9 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Footer from './component/footer'
-import Navbar from './component/navbar'
-import { Home, ContactUs } from './Pages/index'
-import { getSreenSize, ScreenSize } from './utils/utils'
+import React, { createContext, useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Footer from './component/footer';
+import Navbar from './component/navbar';
+import { Home, ContactUs } from './Pages/index';
+import { getSreenSize, ScreenSize } from './utils/utils';
 
 export const ScreenContext = createContext(getSreenSize());
 

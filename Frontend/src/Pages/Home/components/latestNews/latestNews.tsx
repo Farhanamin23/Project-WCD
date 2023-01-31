@@ -16,18 +16,21 @@ const LatestNews = () => {
 
    const events = [
       {
+         id:1,
          image: 'https://picsum.photos/300/450',
          category: 'Recycle Tips',
          title: 'Lorem ipsum dolor sit amet',
          shortDesc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       },
       {
+         id:2,
          image: 'https://picsum.photos/300/450',
          category: 'Recycle Tips',
          title: 'Lorem ipsum dolor sit amet',
          shortDesc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       },
       {
+         id:3,
          image: 'https://picsum.photos/300/450',
          category: 'Recycle Tips',
          title: 'Lorem ipsum dolor sit amet',
@@ -53,7 +56,7 @@ const LatestNews = () => {
                {
                   events.map(event => {
                      return (
-                        <SwiperSlide>
+                        <SwiperSlide key={event.id}>
                            <div className="max-w-[201px] md:max-w-[318px] rounded-[20px] overflow-hidden my-[30px]">
                               <Link to="">
                                  <div className={`h-[83px] md:h-[220px] bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${event.image})` }}></div>
