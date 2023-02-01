@@ -1,3 +1,10 @@
 .event-list .swiper-slide > div {
     filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.1));
 }
+
+.articleDesc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

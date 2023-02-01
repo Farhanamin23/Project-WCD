@@ -25,4 +25,5 @@ export const bgAbouWcd = require("./bg-aboutUs.png");
 export const articleOne = require("./articleOne.png");
 export const articleTwo = require("./articleTwo.png");
 export const articleThree = require("./articleThree.png");
-
+export const bgRoundsColor = require("./bg-rounds-color.png");
+export const iconsEWallet = require("./icons-ewallet.png");

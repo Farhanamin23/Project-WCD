@@ -8,11 +8,13 @@ const Founder = () => {
    const screenSize = useContext(ScreenContext);
    const founder = [
       {
+         id:1,
          name: 'Andy Bahari',
          position: 'Country Leader',
          image: bgFounderCl
       },
       {
+         id:2,
          name: 'Septiany Punti Dewi',
          position: 'General Secretary',
          image: bgFounderGs
@@ -44,9 +46,9 @@ const Founder = () => {
                <div className='mt-[61px] flex flex-col md:flex-row items-center justify-around max-w-[1440px] w-[100%] mx-auto'>
                   {
                      founder.map((item, idx) => (
-                        <div className="flex flex-col items-center mb-[46px] md:mb-0">
+                        <div key={item.id} className="flex flex-col items-center mb-[46px] md:mb-0">
                            <img src={item.image} width={screenSize == 'sm' ? 172 : 336} height={screenSize == 'sm' ? 140 : 273} className='mb-[24px]' />
-                           <p className="font-primary text-[14px] md:text-[36px]">{item.name}<br /><p className="font-primary text-[12px] md:text-[24px]">{item.position}</p></p>
+                           <p className="font-primary text-left text-[14px] md:text-[36px]">{item.name}<br /><span className="font-primary text-[12px] md:text-[24px]">{item.position}</span></p>
                         </div>
                      ))
                   }
