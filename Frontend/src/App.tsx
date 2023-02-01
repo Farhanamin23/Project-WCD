@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Footer from './component/footer'
 import Navbar from './component/navbar'
-import { Home, ContactUs } from './Pages/index'
+import { Home, ContactUs, Donate } from './Pages/index'
 import { getSreenSize, ScreenSize } from './utils/utils'
 
 export const ScreenContext = createContext(getSreenSize());
@@ -22,6 +22,7 @@ const App: React.FC = () => {
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/donate' element={<Donate />} />
             <Route path='/contact-us' element={<ContactUs />} />
           </Routes>
           <Navbar />
