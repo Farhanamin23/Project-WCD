@@ -53,9 +53,10 @@ const LatestNews = () => {
             <SectionTitle title="Latest News" />
 
             {
-               articles &&
+               articles?.length &&
                <Swiper
                   initialSlide={1}
+                  loop={articles?.length < 3 ? false : true}
                   loopFillGroupWithBlank={false}
                   slidesPerView={screenSize == ScreenSize.sm || screenSize == ScreenSize.md ? 1 : 3}
                   centeredSlides={true}
