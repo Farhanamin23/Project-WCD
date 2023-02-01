@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
       { to: "/program", name: "Program" },
       { to: "/", name: "Event" },
       { to: "/donate", name: "Donate" },
-      { to: "/", name: "Article" },
+      { to: "article", name: "Article" },
       { to: "/contact-us", name: "Contact Us" }
    ];
 
