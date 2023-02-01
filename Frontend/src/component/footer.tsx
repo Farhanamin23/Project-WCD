@@ -91,16 +91,16 @@ const Footer: React.FC = () => {
             <div className='flex flex-row w-[100%] md:w-[auto] justify-start items-center md:pl-[21px] md:mb-[50px]'>
                <div className='flex flex-col mr-[30px]'>
                   {
-                     links.map(link => (
-                        <Link className='font-primary text-[10px] md:text-[16px] text-white mb-[8px] md:mb-[12px]' to={link.link}>{link.name}</Link>
+                     links.map((link, idx) => (
+                        <Link key={idx} className='font-primary text-[10px] md:text-[16px] text-white mb-[8px] md:mb-[12px]' to={link.link}>{link.name}</Link>
                      ))
                   }
                </div>
 
                <div className='flex flex-col mr-[40px]'>
                   {
-                     otherLinks.map(link => (
-                        <Link className='font-primary text-[10px] md:text-[16px] text-white mb-[12px] md:mb-[16px]' to={link.link}>{link.name}</Link>
+                     otherLinks.map((link, idx) => (
+                        <Link key={idx} className='font-primary text-[10px] md:text-[16px] text-white mb-[12px] md:mb-[16px]' to={link.link}>{link.name}</Link>
                      ))
                   }
                </div>
@@ -109,8 +109,8 @@ const Footer: React.FC = () => {
                   <h3 className='font-primary text-[12px] md:text-[24px] text-white mb-[12px] md:mb-[24px]'>Follow Us</h3>
                   <div className='flex flex-row flex-wrap'>
                      {
-                        socmed.map(item => (
-                           <a href={item.link} target={'_blank'}><img src={item.icon} className="w-[18px] h-[18px] md:w-[32px] md:h-[32px] mr-[16px] md:mr-[20px] mb-[16px]"/></a>
+                        socmed.map((item, idx) => (
+                           <a key={idx} href={item.link} target={'_blank'}><img src={item.icon} className="w-[18px] h-[18px] md:w-[32px] md:h-[32px] mr-[16px] md:mr-[20px] mb-[16px]"/></a>
                         ))
                      }
                   </div>
