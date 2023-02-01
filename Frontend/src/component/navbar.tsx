@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
    return (
       <nav className="flex fixed w-[100%] bg-white top-0 z-40">
          <div className="mx-auto flex flex-row justify-between items-center py-[5px] w-full max-w-[1238px]">
-            <Link to={'/'}><img src={logo} className={'w-14 h-[52px] lg:w-[70px] lg:h-[65px] ml-[8px]'} /></Link>
+            <Link to={'/'}><img src={logo} className={'w-14 h-[52px] lg:w-[70px] lg:h-[65px] ml-[25px]'} /></Link>
             <div className="flex font-primary flex-row items-center">
                <div className="hidden lg:flex font-primary flex-row items-center">
                   {
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
                      <img src={iconMenuHamburger} className="w-[21px] h-[12px]" />
                   </a>
 
-                  <div className={`lg:hidden flex flex-col bg-p-primary ${isOpenNavBar ? 'ml-[100vw]' : 'ml-auto'} w-[100vh] fixed h-[100%] pt-[80px] top-0 transition-all`}>
+                  <div className={`lg:hidden flex flex-col bg-p-primary ${isOpenNavBar ? 'ml-[0px]' : 'ml-[100vw]'} w-[100vh] fixed h-[100%] pt-[80px] top-0 transition-all`}>
                      {
                         navLinks.map(link => (
                            <Link key={link.name} className="px-[16px] text-white text-[16px] py-[16px] leading-6" to={link.to}>{link.name}</Link>

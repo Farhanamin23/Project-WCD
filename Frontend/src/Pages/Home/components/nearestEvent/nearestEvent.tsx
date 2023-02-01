@@ -26,8 +26,6 @@ interface RegisterEventPostData {
    event: Relation
 }
 
-
-
 const NearestEvent = () => {
 
    const [successSubmit, setSuccessSubmit] = useState(false);
@@ -61,13 +59,15 @@ const NearestEvent = () => {
 
    const { isLoading: isLoadingRegisterEvent, mutate: registerEvent, data } = useMutation<any, Error>(
       async () => {
-         return await adapter.post('/register-events', { data: {
-            name: nameInputRef.current?.getInputData(),
-            email: emailInputRef.current?.getInputData(),
-            phonenumber: phoneInputRef.current?.getInputData(),
-            event: {
-               id: nearestEvent?.id
-            } }
+         return await adapter.post('/register-events', {
+            data: {
+               name: nameInputRef.current?.getInputData(),
+               email: emailInputRef.current?.getInputData(),
+               phonenumber: phoneInputRef.current?.getInputData(),
+               event: {
+                  id: nearestEvent?.id
+               }
+            }
          });
       }
       ,
@@ -86,7 +86,6 @@ const NearestEvent = () => {
 
    const handleJoinEvent = async () => {
       registerEvent();
-
    }
 
    const onChangeText = () => {
@@ -140,9 +139,9 @@ const NearestEvent = () => {
                                     />
 
                                     <PhoneInput ref={phoneInputRef} label="Mobile Phone" placeholder="123456789"
-                                    labelTextStyle="font-primary text-[12px] text-white md:text-[14px] mb-[6px]"
-                                    inputTextStyle="text-[12px] text-p-gray md:text-[16px]" onChangeText={onChangeText} />
-                                 
+                                       labelTextStyle="font-primary text-[12px] text-white md:text-[14px] mb-[6px]"
+                                       inputTextStyle="text-[12px] text-p-gray md:text-[16px]" onChangeText={onChangeText} />
+
                                     {
                                        !!successSubmit && (
                                           <p className="text-center font-primary text-p-yellow">Thank you for registering for the event!</p>
