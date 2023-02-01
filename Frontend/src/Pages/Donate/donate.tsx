@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import TextInput from './components/TextInput';
-import CardProgram from './components/CardProgram/CardProgram'
+import CardProgram from '../../component/CardProgram/CardProgram'
 import { programShowcase } from './dummy'
 import { iconsEWallet } from '../../assets';
 
 export interface iProgramShowcase {
+    id: number,
     title: string;
     description: string;
     src: string;
