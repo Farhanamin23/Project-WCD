@@ -1,24 +1,27 @@
 import axios from "axios";
 
+export const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const apiClient = axios.create({
-   baseURL: "http://localhost:1337/api",
+   baseURL: baseUrl + '/api',
    headers: {
       "Content-type": "application/json",
    },
 })
 
-interface ApiResponse<T>{
-	errorMessage?: string;
-	responseCode?: string;
-	data?: T;
+
+
+export const adapter = {
+   get: async (path: string) => {
+      return await apiClient.get(path);
+   },
+   post: async (path: string, data: any) => {
+      return await apiClient.post(path, data)
+   }
 }
 
-interface BannerData {
-	name: string;
-	email: string;
-} 
-export const findAll = async (path: string) => {
-   const response = await apiClient.get(path);
-   console.log(response)
-   return response.data;
+export interface GetInputData {
+   getInputData(): string;
+   resetInputData(): void;
  }
+
