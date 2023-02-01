@@ -21,3 +21,4 @@ export const bgIndonesiaBersih = require('./bg-indonesia-bersih.png');
 export const iconMenuHamburger = require('./icon-menu-hamburger.png');
 export const iconsEWallet = require('./icons-ewallet.png');
 export const bgIndonesiaBebasSampah = require('./bg-indonesia-bebas-sampah.png');
+export const bgRoundsColor = require('./bg-rounds-color.png');

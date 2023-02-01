@@ -4,12 +4,11 @@ import { GetInputData } from "../actions/global";
 const TextInput = forwardRef<GetInputData, TextInputProps>(({
    inputType = "name",
    label,
-   labelTextStyle = 'text-p-neutral font-primary text-[14px] pb-[4px]',
+   labelTextStyle = 'text-p-neutral font-primary text-[12px] md:text-[14px] pb-[4px]',
    placeholder,
-   inputTextStyle = 'text-[16px] text-p-gray',
-   onChangeText = () => {}
+   inputTextStyle = 'text-[12px] md:text-[16px] text-p-gray',
+   onChangeText = () => { }
 }: TextInputProps, ref) => {
-
 
    const inputRef = useRef<HTMLInputElement>(null);
 
@@ -20,7 +19,7 @@ const TextInput = forwardRef<GetInputData, TextInputProps>(({
             return inputRef.current?.value || ''
          },
          resetInputData() {
-            if(inputRef.current?.value){
+            if (inputRef.current?.value) {
                inputRef.current.value = ''
             }
          },
@@ -30,8 +29,8 @@ const TextInput = forwardRef<GetInputData, TextInputProps>(({
    return (
       <div className="flex flex-col font-tertiary mb-[24px] flex-1">
          <label className={labelTextStyle}>{label}</label>
-         <input ref={inputRef} type={inputType} name="name" placeholder={placeholder} className={`rounded-[12px] w-[100%] py-[10px] px-[14px] border-p-light-gray border-1 outline-none 
-                ${inputTextStyle}`} onChange={onChangeText}/>
+         <input ref={inputRef} type={inputType} name="name" placeholder={placeholder} className={`rounded-[6px] md:rounded-[12px] w-[100%] py-[10px] px-[14px] border-p-light-gray border-1 outline-none 
+                ${inputTextStyle}`} onChange={onChangeText} />
       </div>
    )
 })
