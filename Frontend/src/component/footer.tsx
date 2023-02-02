@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
    const socmed = [
       {
          icon: iconInstagram,
-         link: '#'
+         link: 'https://www.instagram.com/worldcleanupdayindonesia/'
       },
       {
          icon: iconTwitter,
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
       },
       {
          icon: iconFacebook,
-         link: '#'
+         link: 'https://id-id.facebook.com/ldiindonesia/'
       },
       {
          icon: iconYoutube,
@@ -122,4 +122,4 @@ const Footer: React.FC = () => {
    )
 }
 
-export default Footer
+export default Footer;
