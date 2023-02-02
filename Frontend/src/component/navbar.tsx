@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
                   <div className={`lg:hidden flex flex-col bg-p-primary ${isOpenNavBar ? 'ml-[0px]' : 'ml-[100vw]'} w-[100vh] fixed h-[100%] pt-[80px] top-0 transition-all`}>
                      {
                         navLinks.map(link => (
-                           <Link key={link.name} className="px-[16px] text-white text-[16px] py-[16px] leading-6" to={link.to}>{link.name}</Link>
+                           <Link key={link.name} className="px-[16px] text-white text-[16px] py-[16px] leading-6" to={link.to} onClick={()=> setToggleNavbar(false)}>{link.name}</Link>
                         ))
                      }
                   </div>
