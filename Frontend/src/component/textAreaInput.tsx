@@ -6,6 +6,7 @@ const TextAreaInput = forwardRef<GetInputData, TextAreaInputProps>(({
     labelTextStyle = 'text-p-neutral font-primary text-[12px] md:text-[14px] pb-[4px]',
     placeholder,
     inputTextStyle = 'text-[12px] md:text-[16px] text-p-gray',
+    containerStyle = 'mb-[24px]',
     onChangeText = () => { }
 }: TextAreaInputProps, ref
 ) => {
@@ -26,9 +27,9 @@ const TextAreaInput = forwardRef<GetInputData, TextAreaInputProps>(({
     )
 
     return (
-        <div className="flex flex-col font-tertiary mb-[24px] flex-1">
+        <div className={`flex flex-col font-tertiary flex-1 ${containerStyle}`}>
             <label className={labelTextStyle}>{label}</label>
-            <textarea ref={inputRef} placeholder={placeholder} onChange={onChangeText} className={`rounded-[6px] md:rounded-[12px] w-[100%] h-[128px] py-[10px] px-[14px] border-p-light-gray border-1 outline-none 
+            <textarea ref={inputRef} placeholder={placeholder} onChange={onChangeText} className={` font-secondary rounded-[6px] md:rounded-[12px] w-[100%] h-[128px] py-[10px] px-[14px] border-p-light-gray border-[1px] outline-none 
                 ${inputTextStyle}`} />
 
         </div>
@@ -41,6 +42,7 @@ type TextAreaInputProps = {
     labelTextStyle?: string,
     placeholder: string,
     inputTextStyle?: string,
+    containerStyle?: string,
     onChangeText?(): void;
 }
 

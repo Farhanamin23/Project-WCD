@@ -59,7 +59,7 @@ const Sponsor: React.FC = () => {
             <h3 className='text-center font-primary text-[16px] md:text-[48px] mb-[26px] md:mb-[61px] text-p-blue'>National Sponsor</h3>
             <div className='flex flex-row items-center justify-between md:max-w-[1344px] overflow-visible scrollbar-hide w-[90%] mx-auto'>
                {
-                  sponsors &&
+                  sponsors?.length &&
                   <Swiper
                      slidesPerView={'auto'}
                      loop={true}

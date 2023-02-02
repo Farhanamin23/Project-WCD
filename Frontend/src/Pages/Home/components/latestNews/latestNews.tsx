@@ -31,7 +31,7 @@ const LatestNews = () => {
          const res = await adapter.get('/articles?populate=*');
          const _articles: ArticleData[] = res.data.data.reduce((acc: any, item: any) => {
             acc.push({
-               id: item.attributes.title,
+               id: item.id,
                image: item.attributes.image.data.attributes.url,
                createdAt: item.attributes.createdAt,
                title: item.attributes.title,
@@ -69,13 +69,13 @@ const LatestNews = () => {
                      articles?.map(article => {
                         return (
                            <SwiperSlide key={article.id}>
-                              <div className="max-w-[201px] md:max-w-[318px] rounded-[20px] overflow-hidden my-[30px]">
+                              <div className="max-w-[201px] md:max-w-[318px] rounded-[20px] overflow-hidden my-[30px] lg:ease-in-out lg:duration-300 lg:hover:scale-105">
                                  <Link to="">
                                     <div className={`h-[83px] md:h-[220px] bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${baseUrl}${article.image})` }}></div>
                                     <div className="bg-white py-[10px] md:py-[28px] px-[16px] md:px-[31px] text-left text-ellipsis">
                                        <p className="font-primary text-[10px] md:text-[14px] mb-[10px] leading-[17px] md:leading-[25px] text-p-primary">{article.createdAt}</p>
                                        <p className="font-primary text-[14px] md:text-[24px] mb-[12px] leading-[14px] md:leading-[25px] text-ellipsis max-h-[100px]">{article.title}</p>
-                                       <p className="font-secondary text-[12px] md:text-[16px] articleDesc">{article.desc}</p>
+                                       <p className="font-secondary text-[12px] md:text-[16px] line-clamp-3">{article.desc}</p>
                                     </div>
                                  </Link>
                               </div>

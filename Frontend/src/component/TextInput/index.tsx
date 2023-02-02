@@ -78,6 +78,7 @@ const TextInput: React.FC<TextInputProps> = ({ type = "text", label, id, placeho
                     }
                 </div>
             </label>
+
         </div>
     )
 

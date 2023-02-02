@@ -55,7 +55,7 @@ const ContactUs: React.FC = () => {
    }
 
    return (
-      <main>
+      <main className="flex-grow">
          <section>
             <div className="bg-[url('/public/img/bg-page-contactus-gradient.png')] md:bg-[url('/public/img/bg-page-contactus-gradient-desktop.png')] pt-[62px] bg-cover bg-no-repeat overflow-hidden">
                <div className="mx-auto flex flex-row items-center justify-end">

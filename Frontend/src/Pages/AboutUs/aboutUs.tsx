@@ -3,7 +3,7 @@ import SectionTitle from "../../component/sectionTitle";
 
 const AboutUs: React.FC = () => {
   return (
-    <main>
+    <main className="flex-grow">
       <section>
         <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] pt-28 text-center md:mx-auto'>
           <SectionTitle title="World Cleanup Day" />
