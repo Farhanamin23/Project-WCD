@@ -10,14 +10,23 @@ import "./styles.css";
 import { useQuery } from 'react-query';
 import { adapter, baseUrl } from "../../../../actions/global";
 
+interface VideoData {
+   link: string,
+   title: string
+}
+
 const Gallery = () => {
 
-   const { isLoading: isLoadingVideos, data: videos } = useQuery<string[], Error>(
+   const { isLoading: isLoadingVideos, data: videos } = useQuery<VideoData[], Error>(
       "videos-data",
       async () => {
          const res = await adapter.get('/videos');
-         const _videos: string[] = res.data.data.reduce((acc: any, item: any) => {
-            acc.push(item.attributes.vidio);
+         const _videos: VideoData[] = res.data.data.reduce((acc: any, item: any) => {
+            const video : VideoData = {
+               link: item.attributes.vidio,
+               title: item.attributes.title
+            }
+            acc.push(video);
             return acc
          }, []);
          return _videos
@@ -67,22 +76,13 @@ const Gallery = () => {
                               <SwiperSlide key={idx}>
                                  <div className="w-[25vw] md:w-[225px] p-[5px] md:p-[10px] bg-p-pink rounded-[5px]">
                                     <div className="video">
-                                       <iframe width={'100%'} height={'auto'} src={item} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                                       <iframe width={'100%'} height={'auto'} src={item.link} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                                     </div>
-                                    <p className="font-secondary text-[6px] md:text-[18px] mt-[12px]">World fdsfajfiaj</p>
+                                    <p className="font-secondary text-[6px] md:text-[18px] mt-[12px]">{item.title || ''}</p>
                                  </div>
                               </SwiperSlide>
                            ))
                         }
-
-                        {/* <SwiperSlide>
-                     <div className="w-[25vw] md:w-[225px] p-[5px] md:p-[10px] bg-p-pink rounded-[5px]">
-                        <div className="video">
-                           <iframe width={'100%'} height={'auto'} src="https://www.youtube.com/embed/f_jUU3Fd3HI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        </div>
-                        <p className="font-secondary text-[6px] md:text-[18px] mt-[12px]">World fdsfajfiaj</p>
-                     </div>
-                  </SwiperSlide> */}
                      </Swiper>
                   )
                }

@@ -9,6 +9,12 @@ const apiClient = axios.create({
    },
 })
 
+const apiClientFormData = axios.create({
+   baseURL: baseUrl + '/api',
+   headers: {
+      "Content-type": "multipart/form-data",
+   },
+})
 
 
 export const adapter = {
@@ -17,11 +23,18 @@ export const adapter = {
    },
    post: async (path: string, data: any) => {
       return await apiClient.post(path, data)
-   }
+   },
+   postFormData: async (path: string, data: any) => {
+      return await apiClientFormData.post(path, data)
+   },
 }
 
 export interface GetInputData {
-   getInputData(): string;
+   getInputData(): any;
    resetInputData(): void;
  }
 
+ export interface StringValue {
+   name: string,
+   value: any
+ }
