@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { adapter, baseUrl } from '../../actions/global'
 import CardProgram from '../../component/CardProgram/CardProgram'
-import { iProgramShowcase } from '../Donate/donate'
-import { programShowcase } from '../Donate/dummy'
+import { iProgram } from '../../interface'
 
 const Programs: React.FC = () => {
-    const [programs, setPrograms] = useState<iProgramShowcase[]>(programShowcase)
+    const [programs, setPrograms] = useState<iProgram[]>()
     const navigate = useNavigate()
 
     const handleGetData = async () => {
@@ -22,7 +21,7 @@ const Programs: React.FC = () => {
                     id: it.id,
                     title: it.attributes.title,
                     description: it.attributes.description,
-                    src: baseUrl + it.attributes.image.data.attributes.url
+                    imageSrc: baseUrl + it.attributes.image.data.attributes.url
                 }
             })
 
@@ -44,12 +43,12 @@ const Programs: React.FC = () => {
                     <div className="flex  w-[105px] h-[6px] bg-p-yellow lg:w-[190px]"></div>
                 </div>
                 {
-                    programs?.map(it => {
+                    programs?.map((it: iProgram) => {
                         return (
                             <CardProgram
                                 title={it.title}
                                 description={it.description}
-                                imageSrc={it.src}
+                                imageSrc={it.imageSrc}
                                 onClick={() => { navigate(`${it.id}`) }}
                             />
                         )

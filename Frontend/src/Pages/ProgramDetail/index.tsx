@@ -3,10 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { adapter, baseUrl } from '../../actions/global'
-import CardProgram from '../../component/CardProgram/CardProgram'
 import { iProgram } from '../../interface'
-import { iProgramShowcase } from '../Donate/donate'
-import { programShowcase } from '../Donate/dummy'
 
 const ProgramDetail: React.FC<any> = (props) => {
     const [program, setProgram] = useState<iProgram>()

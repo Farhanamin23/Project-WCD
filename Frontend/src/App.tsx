@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
    return (
       <ScreenContext.Provider value={screenSize}>
-         <div className='min-h-[100vh]'>
+         <div className="min-h-[100vh]">
             <Router>
                <Routes>
                   <Route path='/' element={<Home />} />
@@ -30,6 +30,7 @@ const App: React.FC = () => {
                   <Route path='/event' element={<Events />} />
                   <Route path='/event/:identifier' element={<EventDetail />} />
                   <Route path='/contact-us' element={<ContactUs />} />
+                  <Route path="/program-csr/:id" element={<Donate />} />
                </Routes>
                <Navbar />
 
@@ -41,3 +42,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
