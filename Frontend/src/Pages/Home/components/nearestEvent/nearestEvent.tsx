@@ -3,10 +3,10 @@ import PhoneInput from "../../../../component/phoneInput";
 import SectionTitle from "../../../../component/sectionTitle";
 import TextInput from "../../../../component/textInput";
 
-import { useQuery, useMutation } from 'react-query';
-import { adapter, GetInputData } from "../../../../actions/global";
+import { useQuery } from 'react-query';
+import { adapter } from "../../../../actions/global";
 import moment from 'moment';
-import React, { useRef, useState } from "react";
+import { useRegisterEvent } from "../../../../hooks";
 
 interface NearestEventData {
    id: number,
@@ -27,12 +27,16 @@ interface RegisterEventPostData {
 }
 
 const NearestEvent = () => {
-
-   const [successSubmit, setSuccessSubmit] = useState(false);
-
-   const nameInputRef = useRef<GetInputData>(null);
-   const emailInputRef = useRef<GetInputData>(null);
-   const phoneInputRef = useRef<GetInputData>(null);
+   const {
+      isLoadingRegisterEvent,
+      registerEvent,
+      data,
+      nameInputRef,
+      emailInputRef,
+      phoneInputRef,
+      successSubmit,
+      setSuccessSubmit
+   } = useRegisterEvent();
 
    const { isLoading: isLoadingNearestData, data: nearestEvent } = useQuery<NearestEventData | null, Error>(
       "nearest-event",
@@ -57,35 +61,10 @@ const NearestEvent = () => {
       }
    );
 
-   const { isLoading: isLoadingRegisterEvent, mutate: registerEvent, data } = useMutation<any, Error>(
-      async () => {
-         return await adapter.post('/register-events', {
-            data: {
-               name: nameInputRef.current?.getInputData(),
-               email: emailInputRef.current?.getInputData(),
-               phonenumber: phoneInputRef.current?.getInputData(),
-               event: {
-                  id: nearestEvent?.id
-               }
-            }
-         });
-      }
-      ,
-      {
-         onSuccess: (res: any) => {
-            setSuccessSubmit(res.data.data.attributes.name);
-            nameInputRef.current?.resetInputData();
-            emailInputRef.current?.resetInputData();
-            phoneInputRef.current?.resetInputData();
-         },
-         onError: (err: any) => {
-            console.log("error", err)
-         },
-      }
-   );
-
    const handleJoinEvent = async () => {
-      registerEvent();
+      if (nearestEvent?.id) {
+         registerEvent(nearestEvent.id);
+      }
    }
 
    const onChangeText = () => {

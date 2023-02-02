@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./component/footer";
 import Navbar from "./component/navbar";
-import { Home, ContactUs, AboutUs, Article, Donate, MeetTeam, Programs, Events, ProgramDetail, EventDetail } from "./Pages/index";
+import { Home, ContactUs, AboutUs, Article, Donate, MeetTeam, Programs, Events, ProgramDetail, EventDetail, NotFound } from "./Pages/index";
 import { getSreenSize, ScreenSize } from "./utils/utils";
 
 export const ScreenContext = createContext(getSreenSize());
@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
    return (
       <ScreenContext.Provider value={screenSize}>
-         <div className="min-h-[100vh]">
+         <div className="min-h-[100vh] flex flex-col">
             <Router>
                <Routes>
                   <Route path='/' element={<Home />} />
@@ -30,9 +30,10 @@ const App: React.FC = () => {
                   <Route path='/event' element={<Events />} />
                   <Route path='/event/:identifier' element={<EventDetail />} />
                   <Route path='/contact-us' element={<ContactUs />} />
-                  <Route path="/program-csr/:id" element={<Donate />} />
                   <Route path="/program-csr" element={<Donate />} />
+                  <Route path="/program-csr/:id" element={<Donate />} />
                   <Route path="/team" element={<MeetTeam />} />
+                  <Route path="*" element={<NotFound />} />
                </Routes>
                <Navbar />
 

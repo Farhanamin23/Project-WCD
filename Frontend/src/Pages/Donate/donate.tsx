@@ -1,9 +1,7 @@
-import React, { useRef, useState } from 'react'
-import TextInput from './components/TextInput';
-import { iconsEWallet } from '../../assets';
+import React from 'react';
 
 import { useQuery } from 'react-query';
-import { adapter, GetInputData } from '../../actions/global';
+import { adapter } from '../../actions/global';
 import CardProgram from '../../component/CardProgram';
 import SectionTitle from '../../component/sectionTitle';
 import DonateForm from './components/DonateForm';
@@ -42,7 +40,7 @@ const Donate: React.FC = () => {
    );
 
    return (
-      <main className='px-[16px] pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
+      <main className='flex-grow px-[16px] pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
          <div className='pt-14  max-w-5xl md:pt-[75px] mx-auto '>
             {
                programs?.map(it => {

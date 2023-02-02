@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
    ]
 
    return (
-      <footer className='bg-p-primary'>
+      <div className='bg-p-primary mt-auto'>
          <div className='flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap w-[100%] px-[21px] md:px-[none] mx-auto pt-[23px] pb-[23px] md:pt-[62px] md:pb-[12px] my-auto items-center justify-between md:max-w-[1224px] overflow-hidden'>
             <div className='flex flex-row w-[100%] md:w-[auto] md:justify-start mb-[50px]'>
                <div className='flex flex-row items-center mr-[20px] md:mr-[60px] md:min-w-[301px]'>
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
             </div>
 
          </div>
-      </footer>
+      </div>
    )
 }
 

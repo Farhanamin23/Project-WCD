@@ -8,5 +8,18 @@ import ContactUs from "./ContactUs/contactUs";
 import AboutUs from "./AboutUs/aboutUs";
 import Article from "./Article/article";
 import MeetTeam from "./MeetTeam/meetTeam";
+import NotFound from './Notfound/notFound';
 
-export { Home, ContactUs, AboutUs, Article, Donate, MeetTeam, Programs, Events, EventDetail, ProgramDetail };
+export { 
+    Home, 
+    ContactUs, 
+    AboutUs, 
+    Article, 
+    Donate, 
+    MeetTeam, 
+    Programs, 
+    Events, 
+    EventDetail, 
+    ProgramDetail,
+    NotFound
+};

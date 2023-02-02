@@ -12,7 +12,7 @@ export interface iProgramShowcase {
 const Donate: React.FC = () => {
   const [programs, setPrograms] = useState<iProgramShowcase[]>(programShowcase);
   return (
-    <main className='px-3 pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
+    <main className='flex-grow px-3 pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
       <div className="pt-14  max-w-5xl lg:pt-[75px] mx-auto ">
         {programs?.map((it) => {
           return (

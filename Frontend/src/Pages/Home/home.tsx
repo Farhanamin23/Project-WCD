@@ -12,7 +12,7 @@ import Sponsor from './components/sponsor/sponsor';
 const Home: React.FC = () => {
 
    return (
-      <main className='pt-14 lg:pt-[75px]'>
+      <main className='flex-grow pt-14 lg:pt-[75px]'>
          <div>
             <HomeBanner />
             <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] bg-cover bg-no-repeat'>
