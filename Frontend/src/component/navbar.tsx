@@ -29,12 +29,12 @@ const Navbar: React.FC = () => {
                </div>
 
                <div className='flex flex-row items-center'>
-                  <Link className="px-[16px] z-10" to="/contact-us">
+                  <Link className="mx-[16px] z-10" to="/contact-us">
                      <ActionButton title='Join the movement' />
                   </Link>
 
                   <a onClick={() => setToggleNavbar(!isOpenNavBar)} className='lg:hidden mr-[25px] z-10'>
-                     <img src={iconMenuHamburger} className="w-[21px] h-[12px]" />
+                     <img src={iconMenuHamburger} className="w-[21px] h-[12px] mx-[3px] my-[12px]" />
                   </a>
 
                   <div className={`lg:hidden flex flex-col bg-p-primary ${isOpenNavBar ? 'ml-[0px]' : 'ml-[100vw]'} w-[100vh] fixed h-[100%] pt-[80px] top-0 transition-all`}>

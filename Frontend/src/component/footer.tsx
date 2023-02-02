@@ -19,22 +19,22 @@ const Footer: React.FC = () => {
       },
       {
          name: 'Article',
-         link: '#'
+         link: '/article'
       }
    ]
 
    const otherLinks = [
       {
          name: 'More About Us',
-         link: '#'
+         link: '/about-us'
       },
       {
          name: 'Meet The Team',
-         link: '#'
+         link: '/team'
       },
       {
          name: 'Contact Us',
-         link: '#'
+         link: '/contact-us'
       },
       {
          name: 'Gallery',
