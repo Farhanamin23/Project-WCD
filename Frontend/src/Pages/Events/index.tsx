@@ -1,42 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { adapter, baseUrl } from '../../actions/global'
 import CardEvent from '../../component/cardEvent'
-import { iProgramShowcase } from '../Donate/donate'
-import { programShowcase } from '../Donate/dummy'
+import { iEvent } from '../../interface'
 
 const Event: React.FC = () => {
-    const [programs, setPrograms] = useState<iProgramShowcase[]>(programShowcase)
+    const [events, setEvents] = useState<iEvent[]>([])
     const navigate = useNavigate()
-    const events = [
-        {
-            id: 1,
-            title: 'Olah bekas menjadi berkelas',
-            description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            date: '1 August 2022',
-            imageSrc: 'https://krafstudio.com/wp-content/uploads/2022/07/pivva_to_helmet_samurai.jpg'
-        },
-        {
-            id: 2,
-            title: 'Olah bekas menjadi berkelas',
-            description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            date: '1 August 2022',
-            imageSrc: 'https://krafstudio.com/wp-content/uploads/2022/07/pivva_to_helmet_samurai.jpg'
-        },
-        {
-            id: 3,
-            title: 'Olah bekas menjadi berkelas',
-            description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            date: '1 August 2022',
-            imageSrc: 'https://krafstudio.com/wp-content/uploads/2022/07/pivva_to_helmet_samurai.jpg'
-        },
-        {
-            id: 4,
-            title: 'Olah bekas menjadi berkelas',
-            description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            date: '1 August 2022',
-            imageSrc: 'https://krafstudio.com/wp-content/uploads/2022/07/pivva_to_helmet_samurai.jpg'
-        },
-    ]
+
+    const handleGetData = async () => {
+        try {
+            const res = await adapter.get('/events?populate=*');
+
+            if (res.status != 200) {
+                throw res
+            }
+
+            const events = res.data.data.map((it: any) => {
+                const _date = new Date(it?.attributes?.publishedAt).toDateString();
+                console.log(_date)
+                return {
+                    id: it.id,
+                    title: it.attributes.title,
+                    description: it.attributes.description,
+                    date: _date,
+                    imageSrc: baseUrl + it.attributes.image.data.attributes.url
+                }
+            })
+            setEvents(events)
+        } catch (error) {
+            setEvents([])
+        }
+    }
+
+    useEffect(() => {
+        handleGetData()
+        return () => { }
+    }, [])
+
     return (
         <main className='px-3 pb-16 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
@@ -47,15 +48,15 @@ const Event: React.FC = () => {
 
                 <div className='grid grid-cols-2 gap-2 gap-y-6 mt-8 lg:grid-cols-3 lg:gap-5'>
                     {
-                        events.map((it, idx) => {
+                        events.map((it: iEvent) => {
                             return (
                                 <CardEvent
-                                    key={idx}
+                                    key={it.id}
                                     title={it.title}
                                     description={it.description}
                                     imageSrc={it.imageSrc}
                                     date={it.date}
-                                    onClick={()=>navigate(`${it.id}`)}
+                                    onClick={() => navigate(`${it.id}`)}
                                 />
                             )
                         })

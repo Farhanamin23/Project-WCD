@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { adapter, baseUrl } from '../../actions/global'
 import CardProgram from '../../component/CardProgram/CardProgram'
 import { iProgramShowcase } from '../Donate/donate'
 import { programShowcase } from '../Donate/dummy'
@@ -7,6 +8,34 @@ import { programShowcase } from '../Donate/dummy'
 const Programs: React.FC = () => {
     const [programs, setPrograms] = useState<iProgramShowcase[]>(programShowcase)
     const navigate = useNavigate()
+
+    const handleGetData = async () => {
+        try {
+            const res = await adapter.get('/programs?populate=*');
+
+            if (res.status != 200) {
+                throw res
+            }
+
+            const programs = res.data.data.map((it: any) => {
+                return {
+                    id: it.id,
+                    title: it.attributes.title,
+                    description: it.attributes.description,
+                    src: baseUrl + it.attributes.image.data.attributes.url
+                }
+            })
+
+            setPrograms(programs)
+        } catch (error) {
+        }
+    }
+
+    useEffect(() => {
+        handleGetData()
+        return () => { }
+    }, [])
+
     return (
         <main className='px-3 pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
@@ -21,7 +50,7 @@ const Programs: React.FC = () => {
                                 title={it.title}
                                 description={it.description}
                                 imageSrc={it.src}
-                                onClick={()=>{navigate('gilnag')}}
+                                onClick={() => { navigate(`${it.id}`) }}
                             />
                         )
                     })

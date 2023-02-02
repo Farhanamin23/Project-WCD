@@ -1,22 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { adapter, baseUrl } from '../../actions/global'
 import CardProgram from '../../component/CardProgram/CardProgram'
 import TextInput from '../../component/TextInput/index'
+import { iEvent } from '../../interface'
 import { iProgramShowcase } from '../Donate/donate'
 import { programShowcase } from '../Donate/dummy'
 
 const EventDetail: React.FC<any> = (props) => {
-    const [programs, setPrograms] = useState<iProgramShowcase[]>(programShowcase)
+    const [event, setEvent] = useState<iEvent>()
     let { identifier } = useParams()
-    const programImages = [
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-    ]
+   
+    const handleGetDetail = async () => {
+        try {
+            const res = await adapter.get('/events/' + identifier + '?populate=*');
+
+            if (res.status != 200) {
+                throw res
+            }
+
+            const _date = new Date(res.data.data?.attributes?.publishedAt).toDateString();
+            const event: iEvent = {
+                id: res.data.data.id,
+                title: res.data.data.attributes.title,
+                description: res.data.data.attributes.description,
+                date: _date,
+                imageSrc: baseUrl + res.data.data.attributes.image.data.attributes.url,
+                detailEvent: res.data.data.attributes.detailEvent
+            }
+
+            setEvent(event)
+        } catch (error) {
+        }
+    }
+
+    useEffect(() => {
+        handleGetDetail()
+        return () => { }
+    }, [])
+
     return (
         <main className='px-3 pb-24 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
@@ -28,11 +52,11 @@ const EventDetail: React.FC<any> = (props) => {
                 <div className='grid grid-cols-1 mt-8 lg:grid-cols-2 lg:gap-16'>
                     <section>
                         <div>
-                            <img className='w-full h-[150px] rounded-sm max-w-[570px] max-h-[260px] lg:h-[260px] m-auto' src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png" alt={`image `} />
+                            <img className='w-full h-[150px] object-cover rounded-sm max-w-[570px] max-h-[260px] lg:h-[260px] m-auto' src={event?.imageSrc} alt={`image ${event?.title}`} />
                         </div>
                         <div className='mt-8'>
-                            <p className="font-primary text-sm text-p-neutral mb-5 lg:text-3xl">{'Lorem Ipsum DOlor'}</p>
-                            <p className="font-secondary text-xs text-p-neutral lg:text-xl">{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat.'}</p>
+                            <p className="font-primary text-sm text-p-neutral mb-5 lg:text-3xl">{event?.title}</p>
+                            <p className="font-secondary text-xs text-p-neutral lg:text-xl">{event?.description}</p>
                         </div>
                     </section>
 
@@ -65,7 +89,7 @@ const EventDetail: React.FC<any> = (props) => {
 
                         <section>
                             <p className="font-primary text-sm text-p-neutral mb-5 lg:text-3xl">{'Detail Event:'}</p>
-                            <p className="font-secondary text-xs text-p-neutral lg:text-xl">{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat.'}</p>
+                            <p className="font-secondary text-xs text-p-neutral lg:text-xl">{event?.detailEvent}</p>
                         </section>
                     </div>
 

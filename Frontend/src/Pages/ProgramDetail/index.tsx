@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { adapter, baseUrl } from '../../actions/global'
 import CardProgram from '../../component/CardProgram/CardProgram'
+import { iProgram } from '../../interface'
 import { iProgramShowcase } from '../Donate/donate'
 import { programShowcase } from '../Donate/dummy'
 
 const ProgramDetail: React.FC<any> = (props) => {
-    const [programs, setPrograms] = useState<iProgramShowcase[]>(programShowcase)
+    const [program, setProgram] = useState<iProgram>()
     let { identifier } = useParams()
     const programImages = [
         'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
@@ -16,6 +18,31 @@ const ProgramDetail: React.FC<any> = (props) => {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
         'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
     ]
+
+    const handleGetDetail = async () => {
+        try {
+            const res = await adapter.get('/programs/' + identifier + '?populate=*');
+
+            if (res.status != 200) {
+                throw res
+            }
+
+            const program : iProgram = {
+                id: res.data.data.id,
+                title: res.data.data.attributes.title,
+                description: res.data.data.attributes.description,
+                imageSrc: baseUrl + res.data.data.attributes.image.data.attributes.url,
+            }
+
+            setProgram(program)
+        } catch (error) {
+        }
+    }
+
+    useEffect(() => {
+        handleGetDetail()
+        return () => { }
+    }, [])
     return (
         <main className='px-3 pb-10 lg:pb-24 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
@@ -26,11 +53,11 @@ const ProgramDetail: React.FC<any> = (props) => {
 
                 <section className='grid grid-cols-3 gap-2 mt-6 lg:gap-24 lg:mt-24'>
                     <div className='mt-2'>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png" alt={`image `} />
+                        <img src={program?.imageSrc} alt={`image ${program?.title}`} />
                     </div>
                     <div className='col-span-2'>
-                        <p className="font-primary text-sm text-p-neutral lg:text-3xl">{'Lorem Ipsum DOlor'}</p>
-                        <p className="font-secondary text-xs text-p-neutral lg:text-xl">{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum a turpis at iaculis. In quis orci tincidunt leo tempor blandit. Nunc tempus ligula eu iaculis pellentesque. Donec rhoncus metus et lobortis iaculis. Cras blandit ultrices feugiat.'}</p>
+                        <p className="font-primary text-sm text-p-neutral lg:text-3xl">{program?.title}</p>
+                        <p className="font-secondary text-xs text-p-neutral lg:text-xl">{program?.description}</p>
                     </div>
                 </section>
 
