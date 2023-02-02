@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 const CardProgram: React.FC<{ imageSrc: string, title: string, description: string }> = ({
@@ -13,7 +14,7 @@ const CardProgram: React.FC<{ imageSrc: string, title: string, description: stri
                 <div className='block grow'>
                     <p className="font-primary text-sm lg:text-2xl ">{title}</p>
                     <p className="font-secondary text-sm line-clamp-6 lg:text-lg">{description}</p>
-                    <a className='font-primary text-xs text-p-primary lg:text-sm' href="./home">Read More</a>
+                    <Link className='font-primary text-xs text-p-primary lg:text-sm' to="/article/1">Read More</Link>
                 </div>
             </div>
         </section>
