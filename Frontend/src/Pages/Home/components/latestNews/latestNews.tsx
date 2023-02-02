@@ -69,7 +69,7 @@ const LatestNews = () => {
                      articles?.map(article => {
                         return (
                            <SwiperSlide key={article.id}>
-                              <div className="max-w-[201px] md:max-w-[318px] rounded-[20px] overflow-hidden my-[30px]">
+                              <div className="max-w-[201px] md:max-w-[318px] rounded-[20px] overflow-hidden my-[30px] lg:ease-in-out lg:duration-300 lg:hover:scale-105">
                                  <Link to="">
                                     <div className={`h-[83px] md:h-[220px] bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${baseUrl}${article.image})` }}></div>
                                     <div className="bg-white py-[10px] md:py-[28px] px-[16px] md:px-[31px] text-left text-ellipsis">

@@ -1,9 +1,9 @@
-import React, { createContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Footer from "./component/footer";
-import Navbar from "./component/navbar";
-import { Home, ContactUs, AboutUs, Article, Donate } from "./Pages/index";
-import { getSreenSize, ScreenSize } from "./utils/utils";
+import React, { createContext, useEffect, useState } from "react"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Footer from "./component/footer"
+import Navbar from "./component/navbar"
+import { Home, ContactUs, AboutUs, Article, Donate, Programs, Events, ProgramDetail, EventDetail } from "./Pages/index"
+import { getSreenSize, ScreenSize } from "./utils/utils"
 
 export const ScreenContext = createContext(getSreenSize());
 
@@ -11,6 +11,7 @@ const App: React.FC = () => {
    const [screenSize, setScreenSize] = useState<ScreenSize>(getSreenSize());
    useEffect(() => {
       window.addEventListener("resize", function (event) {
+         // console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
          setScreenSize(getSreenSize());
       });
    }, []);
@@ -20,11 +21,15 @@ const App: React.FC = () => {
          <div className="min-h-[100vh]">
             <Router>
                <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path='/' element={<Home />} />
+                  <Route path='/donate' element={<Donate />} />
                   <Route path="/about-us" element={<AboutUs />} />
                   <Route path="/article" element={<Article />} />
-                  <Route path="/contact-us" element={<ContactUs />} />
-                  <Route path="/donate" element={<Donate />} />
+                  <Route path='/program' element={<Programs />} />
+                  <Route path='/program/:identifier' element={<ProgramDetail />} />
+                  <Route path='/event' element={<Events />} />
+                  <Route path='/event/:identifier' element={<EventDetail />} />
+                  <Route path='/contact-us' element={<ContactUs />} />
                   <Route path="/program-csr/:id" element={<Donate />} />
                </Routes>
                <Navbar />
@@ -37,3 +42,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
