@@ -1,4 +1,4 @@
-import { aboutWcd } from "../../assets";
+import { aboutWcdDesk } from "../../assets";
 import SectionTitle from "../../component/sectionTitle";
 
 const AboutUs: React.FC = () => {
@@ -9,7 +9,7 @@ const AboutUs: React.FC = () => {
           <SectionTitle title="World Cleanup Day" />
           <img
             className="mx-auto mt-6 mb-9 sm:w-[809px] sm:h-[455px] sm:my-[79px]"
-            src={aboutWcd}
+            src={aboutWcdDesk}
             alt="about-img"
           />
           <div className="pr-7 pl-7 mx-auto pb-8 max-w-[1117px]">

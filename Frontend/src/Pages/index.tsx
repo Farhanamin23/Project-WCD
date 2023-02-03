@@ -10,12 +10,14 @@ import Article from "./Article/article";
 import MeetTeam from "./MeetTeam/meetTeam";
 import NotFound from './Notfound/notFound';
 import ProgramCsrDetail from './ProgramCsrDetail/programCsrDetail';
+import ArticleDetail from "./ArticleDetail";
+
 
 export { 
     Home, 
     ContactUs, 
     AboutUs, 
-    Article, 
+    Article,
     Donate, 
     MeetTeam, 
     Programs, 
@@ -23,5 +25,6 @@ export {
     EventDetail, 
     ProgramDetail,
     NotFound,
-    ProgramCsrDetail
+    ProgramCsrDetail,
+    ArticleDetail
 };

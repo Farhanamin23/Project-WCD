@@ -8,14 +8,7 @@ import { iProgram } from '../../interface'
 const ProgramDetail: React.FC<any> = (props) => {
     const [program, setProgram] = useState<iProgram>()
     let { identifier } = useParams()
-    const programImages = [
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png',
-    ]
-
+    
     const handleGetDetail = async () => {
         try {
             const res = await adapter.get('/programs/' + identifier + '?populate=*');
@@ -24,11 +17,15 @@ const ProgramDetail: React.FC<any> = (props) => {
                 throw res
             }
 
-            const program : iProgram = {
+            const program: iProgram = {
                 id: res.data.data.id,
                 title: res.data.data.attributes.title,
                 description: res.data.data.attributes.description,
-                imageSrc: baseUrl + res.data.data.attributes.image.data.attributes.url,
+                imageSrc: baseUrl + res.data.data.attributes.image.data[0].attributes.url,
+                programImages: res.data.data.attributes.image.data?.slice(1).reduce((acc: string[], imageData: any) => {
+                    acc.push(baseUrl + imageData.attributes.url)
+                    return acc
+                }, [])
             }
 
             setProgram(program)
@@ -59,9 +56,9 @@ const ProgramDetail: React.FC<any> = (props) => {
                 </section>
 
                 <section className='mt-8 lg:mt-24'>
-                    <div className='flex flex-row items-center justify-between md:max-w-[1344px] overflow-visible scrollbar-hide w-[90%] mx-auto'>
+                    <div className='flex flex-row items-center justify-between md:max-w-[1344px] overflow-visible scrollbar-hide w-[100%] mx-auto'>
                         {
-                            programImages?.length &&
+                            ((program?.programImages?.length || 0) > 0) &&
                             <Swiper
                                 slidesPerView={3}
                                 loop={true}
@@ -70,9 +67,12 @@ const ProgramDetail: React.FC<any> = (props) => {
                                 className='md:mt-[50px]'
                             >
                                 {
-                                    programImages?.map((item, idx) => (
-                                        <SwiperSlide className='mx-1 lg:mx-6 ' key={idx}>
-                                            <img src={item} className="object-cover rounded-lg ease-in-out" />
+                                    program?.programImages?.map((item, idx) => (
+                                        <SwiperSlide className='mx-1' key={idx}>
+                                            <div className='px-[10px] md:px-[50px]'>
+                                                <img src={item} className="object-cover rounded-lg ease-in-out" />
+                                            </div>
+
                                         </SwiperSlide>
                                     ))
                                 }
@@ -85,4 +85,4 @@ const ProgramDetail: React.FC<any> = (props) => {
     )
 }
 
-export default ProgramDetail 
+export default ProgramDetail;

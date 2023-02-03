@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { adapter, baseUrl } from '../../actions/global'
 import CardProgram from '../../component/CardProgram/CardProgram'
 import { iProgram } from '../../interface'
 
 const Programs: React.FC = () => {
     const [programs, setPrograms] = useState<iProgram[]>()
-    const navigate = useNavigate()
 
     const handleGetData = async () => {
         try {
@@ -24,7 +22,7 @@ const Programs: React.FC = () => {
                     imageSrc: baseUrl + it.attributes.image.data[0].attributes.url
                 }
             })
-            
+
             setPrograms(programs)
         } catch (error) {
         }
@@ -43,13 +41,13 @@ const Programs: React.FC = () => {
                     <div className="flex  w-[105px] h-[6px] bg-p-yellow lg:w-[190px]"></div>
                 </div>
                 {
-                    programs?.map((program: iProgram) => {
+                    programs?.map((it: iProgram) => {
                         return (
                             <CardProgram
-                                title={program.title}
-                                description={program.description}
-                                imageSrc={program.imageSrc}
-                                onClick={() => { navigate(`${program.id}`) }}
+                                title={it.title}
+                                description={it.description}
+                                imageSrc={it.imageSrc}
+                                link={"/program/"+it.id}
                             />
                         )
                     })
