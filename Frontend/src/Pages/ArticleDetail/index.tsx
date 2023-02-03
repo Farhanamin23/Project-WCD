@@ -22,6 +22,8 @@ const ArticleDetail: React.FC<any> = (props) => {
                 title: res.data.data.attributes.title,
                 description: res.data.data.attributes.description,
                 imageSrc: baseUrl + res.data.data.attributes.image.data.attributes.url,
+                slug: res.data.data.attributes.slug,
+                excerpt: res.data.data.attributes.excerpt
             }
             setIsError(false)
             setArticle(article)
