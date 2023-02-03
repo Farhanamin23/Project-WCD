@@ -7,6 +7,7 @@ import { useQuery } from 'react-query';
 import { adapter } from "../../../../actions/global";
 import moment from 'moment';
 import { useRegisterEvent } from "../../../../hooks";
+import ReactMarkdown from "react-markdown";
 
 interface NearestEventData {
    id: number,
@@ -99,7 +100,7 @@ const NearestEvent = () => {
                                  <div className="mt-[76px] py-[28px] px-[31px] w-[100%] max-w-[350px] md:w-[359px] md:self-start bg-p-yellow/70 backdrop-blur-lg border-p-yellow-3 border-2 rounded-[12px]">
                                     <p className="font-primary text-[16px] md:text-[24px] text-white text-center mb-[4px]">{nearestEvent.title}</p>
                                     <p className="font-primary text-[16px] md:text-[20px] text-white text-center mb-[32px]">{nearestEvent.startDate}</p>
-                                    <p className="font-secondary text-[14px] md:text-[16px] text-white line-clamp-5">{nearestEvent.desc}</p>
+                                    <p className="font-secondary text-[14px] md:text-[16px] text-white line-clamp-5"><ReactMarkdown>{nearestEvent.desc}</ReactMarkdown></p>
                                  </div>
                               </div>
 

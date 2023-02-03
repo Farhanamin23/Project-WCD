@@ -4,6 +4,7 @@ import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { adapter, baseUrl } from '../../actions/global'
 import { iProgram } from '../../interface'
+import ReactMarkdown from "react-markdown";
 
 const ProgramDetail: React.FC<any> = (props) => {
     const [program, setProgram] = useState<iProgram>()
@@ -51,7 +52,7 @@ const ProgramDetail: React.FC<any> = (props) => {
                     </div>
                     <div className='col-span-2'>
                         <p className="font-primary text-sm text-p-neutral lg:text-3xl">{program?.title}</p>
-                        <p className="font-secondary text-xs text-p-neutral lg:text-xl">{program?.description}</p>
+                        <p className="font-secondary text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{program?.description || ''}</ReactMarkdown></p>
                     </div>
                 </section>
 

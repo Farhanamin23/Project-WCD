@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from "react-markdown";
 
 interface CardEventProps {
     title: string
@@ -16,7 +17,7 @@ const CardEvent: React.FC<CardEventProps> = ({ title, description, imageSrc, dat
             <div className='p-4'>
                 <p className="font-primary text-p-primary text-xs mb-4">{date}</p>
                 <p className="font-primary text-p-neutral text-sm mb-3">{title}</p>
-                <p className="font-secondary text-p-neutral text-sm line-clamp-4">{description}</p>
+                <p className="font-secondary text-p-neutral text-sm line-clamp-4"><ReactMarkdown>{description}</ReactMarkdown></p>
             </div>
         </div>
     )

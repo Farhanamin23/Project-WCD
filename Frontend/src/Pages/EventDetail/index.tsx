@@ -6,6 +6,7 @@ import PhoneInput from '../../component/phoneInput';
 import TextInput from '../../component/textInput';
 import { useRegisterEvent } from '../../hooks';
 import { iEvent } from '../../interface';
+import ReactMarkdown from "react-markdown";
 
 const EventDetail: React.FC<any> = (props) => {
     const [event, setEvent] = useState<iEvent>()
@@ -74,7 +75,7 @@ const EventDetail: React.FC<any> = (props) => {
                         </div>
                         <div className='mt-8'>
                             <p className="font-primary text-sm text-p-neutral mb-5 lg:text-3xl">{event?.title}</p>
-                            <p className="font-secondary text-xs text-p-neutral lg:text-xl">{event?.description}</p>
+                            <p className="font-secondary text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{event?.description || ''}</ReactMarkdown></p>
                         </div>
                     </section>
 
@@ -118,7 +119,7 @@ const EventDetail: React.FC<any> = (props) => {
 
                         <section className='lg:pt-20 pt-6 self-end max-w-[525px] w-[100%]'>
                             <p className="font-primary text-sm text-p-neutral mb-5 lg:text-3xl">{'Detail Event:'}</p>
-                            <p className="font-secondary text-xs text-p-neutral lg:text-xl">{event?.detailEvent}</p>
+                            <p className="font-secondary text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{event?.detailEvent|| ''}</ReactMarkdown></p>
                         </section>
                     </div>
 

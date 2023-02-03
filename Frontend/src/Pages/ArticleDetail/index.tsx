@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { adapter, baseUrl } from '../../actions/global'
 import { iArticle } from '../../interface'
+import ReactMarkdown from "react-markdown";
 
 const ArticleDetail: React.FC<any> = (props) => {
     const [article, setArticle] = useState<iArticle>()
@@ -46,7 +47,7 @@ const ArticleDetail: React.FC<any> = (props) => {
                                 alt={`${article?.title}`}
                             />
                             <div className="pr-7 pl-7 mx-auto pb-8 max-w-[1117px]">
-                                <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl">{article?.description}</p>
+                                <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{article?.description}</ReactMarkdown></p>
                             </div>
                         </div>
                     </section>

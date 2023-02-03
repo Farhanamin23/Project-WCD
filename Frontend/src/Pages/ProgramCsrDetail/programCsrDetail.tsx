@@ -4,6 +4,7 @@ import { adapter, baseUrl } from '../../actions/global'
 import DonateForm from '../Donate/components/DonateForm'
 import { iProgramShowcase } from '../Donate/donate'
 import SectionTitle from '../../component/sectionTitle'
+import ReactMarkdown from "react-markdown";
 
 const ProgramCsrDetail: React.FC<any> = (props) => {
    const [programCsr, setArticle] = useState<iProgramShowcase>()
@@ -51,7 +52,7 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
                         alt={`${programCsr?.title}`}
                      />
                      <div className="pr-7 pl-7 mx-auto pb-8 max-w-[1117px]">
-                        <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl">{programCsr?.description}</p>
+                        <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{programCsr?.description}</ReactMarkdown></p>
                      </div>
 
                      <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>
