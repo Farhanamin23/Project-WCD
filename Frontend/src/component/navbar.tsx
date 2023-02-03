@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { iconMenuHamburger, logo } from '../assets';
 import ActionButton from './actionButton';
 
 const Navbar: React.FC = () => {
    const [isOpenNavBar, setToggleNavbar] = useState<Boolean>(false);
+   const location = useLocation();
    const navLinks = [
       { to: "/", name: "Home" },
       { to: "/about-us", name: "About us" },
@@ -14,6 +15,12 @@ const Navbar: React.FC = () => {
       { to: "article", name: "Article" },
       { to: "/contact-us", name: "Contact Us" }
    ];
+
+   const handleScrollTo = () => {
+      console.log("scroll to")
+      const element = document.getElementById('nearestEvent');
+      element?.scrollIntoView({behavior:"smooth", block: "end", inline:"nearest"});
+   }
 
    return (
       <nav className="flex fixed w-[100%] bg-white top-0 z-40">
@@ -29,9 +36,19 @@ const Navbar: React.FC = () => {
                </div>
 
                <div className='flex flex-row items-center'>
-                  <Link className="mx-[16px] z-10" to="/contact-us">
-                     <ActionButton title='Join the movement' />
-                  </Link>
+                  {
+                     location.pathname != "/" ? (
+
+                  <Link className="mx-[16px] z-10" to={location.pathname == "/" ? "/" : "/event"}>
+                  <ActionButton title='Join the movement' />
+               </Link>
+                     ) : (
+                        <button onClick={handleScrollTo} className="mx-[16px] z-10">
+                           
+                        <ActionButton title='Join the movement' />
+                        </button>
+                     )
+                  }
 
                   <a onClick={() => setToggleNavbar(!isOpenNavBar)} className='lg:hidden mr-[25px] z-10'>
                      <img src={iconMenuHamburger} className="w-[21px] h-[12px] mx-[3px] my-[12px]" />

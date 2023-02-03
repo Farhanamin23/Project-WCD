@@ -73,7 +73,7 @@ const NearestEvent = () => {
 
    return (
       <section>
-         <div className="bg-p-primary py-[56px]">
+         <div className="bg-p-primary py-[56px]"  id="nearestEvent">
             <div className="max-w-[1102px] mx-auto">
                <SectionTitle title={'Nearest Event'} color={'text-white'} />
                {

@@ -101,7 +101,7 @@ export default function DonateForm({ eventList }: DonateFormProps) {
          <section>
             <form
                onSubmit={handleSubmit}
-               className='border-2 rounded-xl p-3 mt-6 border-p-primary md:w-[500px]'
+               className='border-2 rounded-xl p-3 mt-6 border-p-primary md:w-[500px] text-left'
             >
                <div className='md:flex md:items-center'>
                   <div className='flex-1 md:mr-3'>
