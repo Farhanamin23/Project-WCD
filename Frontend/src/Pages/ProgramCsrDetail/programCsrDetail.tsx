@@ -54,7 +54,7 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
                         <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl">{programCsr?.description}</p>
                      </div>
 
-                     <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto'>
+                     <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>
                         <SectionTitle title="Donate" />
                         <DonateForm
                            eventList={[programCsr]}
