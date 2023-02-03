@@ -49,7 +49,7 @@ const Programs: React.FC = () => {
                                 title={it.title}
                                 description={it.description}
                                 imageSrc={it.imageSrc}
-                                onClick={() => { navigate(`${it.id}`) }}
+                                link={"/program/"+it.id}
                             />
                         )
                     })

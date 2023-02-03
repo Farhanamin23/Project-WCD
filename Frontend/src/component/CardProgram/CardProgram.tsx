@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
-const CardProgram: React.FC<{ imageSrc: string, title: string, description: string, onClick?: () => any }> = ({
+const CardProgram: React.FC<{ imageSrc: string, title: string, description: string, link: string  }> = ({
     imageSrc,
     title,
     description,
-    onClick
+    link
 }) => {
     return (
         <div className='mt-6 lg:ease-in-out lg:duration-300 lg:hover:scale-105'>
@@ -15,7 +16,7 @@ const CardProgram: React.FC<{ imageSrc: string, title: string, description: stri
                 <div className='block grow'>
                     <p className="font-primary text-sm lg:text-2xl ">{title}</p>
                     <p className="font-secondary text-sm line-clamp-6 lg:text-lg">{description}</p>
-                    <a className='font-primary text-xs text-p-primary lg:text-sm' onClick={onClick} href="javascript:void(0)">Read More</a>
+                    <Link className='font-primary text-xs text-p-primary lg:text-sm' to={link}>Read More</Link>
                 </div>
             </div>
         </div>

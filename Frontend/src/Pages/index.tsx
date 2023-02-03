@@ -9,13 +9,13 @@ import AboutUs from "./AboutUs/aboutUs";
 import Article from "./Article/article";
 import MeetTeam from "./MeetTeam/meetTeam";
 import NotFound from './Notfound/notFound';
-import Detail from "./Detail/detail"
+
 
 export { 
     Home, 
     ContactUs, 
     AboutUs, 
-    Article, 
+    Article,
     Donate, 
     MeetTeam, 
     Programs, 
@@ -23,5 +23,4 @@ export {
     EventDetail, 
     ProgramDetail,
     NotFound,
-    Detail
 };

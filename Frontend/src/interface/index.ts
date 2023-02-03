@@ -13,3 +13,10 @@ export interface iProgram {
     description: string
     imageSrc: string
 }
+
+export interface iArticle {
+    id: number
+    title: string
+    description: string
+    imageSrc: string
+}
