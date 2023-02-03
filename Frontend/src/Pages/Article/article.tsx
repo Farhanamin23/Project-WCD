@@ -38,7 +38,7 @@ const Article: React.FC = () => {
     return (
         <main className='flex-grow px-3 pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
-                <div className='flex flex-col justify-center items-center mt-4 lg:mb-6 lg:mt-16'>
+                <div className='flex flex-col justify-center items-center mt-4 lg:mb-6 lg:mt-16 pb-[38px] md:pb-[50px]'>
                     <p className="font-primary text-p-primary text-xl lg:text-4xl">Article</p>
                     <div className="flex  w-[105px] h-[6px] bg-p-yellow lg:w-[190px]"></div>
                 </div>

@@ -191,7 +191,7 @@ export default function DonateForm({ eventList }: DonateFormProps) {
          </section>
 
          <section className='mt-14 md:ml-10'>
-            <div className='flex flex-col items-center bg-p-yellow p-4 mx-auto w-[300px] rounded-xl md:w-[220px]'>
+            <div className='flex flex-col items-center bg-p-yellow p-4 mx-auto max-w-[300px] rounded-xl md:w-[220px]'>
                <p className="font-primary text-p-primary text-lg my-4">Donate with QRIS</p>
                <img className='w-full h-full object-contain' src="https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg" alt="QRIS Code" />
             </div>

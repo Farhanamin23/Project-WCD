@@ -19,7 +19,7 @@ const Donate: React.FC = () => {
       "program-csr-data",
       async () => {
          const res = await adapter.get('/program-csr-lists?populate=*');
-         const _articles: iProgramShowcase[] = res.data.data.reduce((acc: any, item: any) => {
+         const _programs: iProgramShowcase[] = res.data.data.reduce((acc: any, item: any) => {
             acc.push({
                id: item.id,
                images: item.attributes.images.data.reduce((accImages: any, item: any) => {
@@ -31,7 +31,7 @@ const Donate: React.FC = () => {
             })
             return acc
          }, []);
-         return _articles
+         return _programs
       },
       {
          enabled: true,
@@ -41,7 +41,7 @@ const Donate: React.FC = () => {
 
    return (
       <main className='flex-grow px-[16px] pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
-         <div className='pt-14  max-w-5xl md:pt-[75px] mx-auto '>
+         <div className='pt-[80px] md:pt-[150px] max-w-5xl mx-auto'>
             {
                programs?.map(it => {
                   return (
