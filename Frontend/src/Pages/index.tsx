@@ -10,16 +10,17 @@ import Article from "./Article/article";
 import MeetTeam from "./MeetTeam/meetTeam";
 import NotFound from './Notfound/notFound';
 
+
 export { 
     Home, 
     ContactUs, 
     AboutUs, 
-    Article, 
+    Article,
     Donate, 
     MeetTeam, 
     Programs, 
     Events, 
     EventDetail, 
     ProgramDetail,
-    NotFound
+    NotFound,
 };

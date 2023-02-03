@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
    return (
       <nav className="flex fixed w-[100%] bg-white top-0 z-40">
          <div className="mx-auto flex flex-row justify-between items-center py-[5px] w-full max-w-[1238px]">
-            <Link to={'/'}><img src={logo} className={'w-14 h-[52px] lg:w-[70px] lg:h-[65px] ml-[25px]'} /></Link>
+            <Link to={'/'}><img alt='' src={logo} className={'w-14 h-[52px] lg:w-[70px] lg:h-[65px] ml-[25px]'} /></Link>
             <div className="flex font-primary flex-row items-center">
                <div className="hidden lg:flex font-primary flex-row items-center">
                   {

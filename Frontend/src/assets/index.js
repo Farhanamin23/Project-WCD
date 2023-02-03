@@ -21,6 +21,7 @@ export const bgIndonesiaBersih = require("./bg-indonesia-bersih.png");
 export const iconMenuHamburger = require("./icon-menu-hamburger.png");
 export const bgIndonesiaBebasSampah = require("./bg-indonesia-bebas-sampah.png");
 export const aboutWcd = require("./about-wcd.png");
+export const aboutWcdDesk = require("./aboutUsDesktop.png");
 export const bgAbouWcd = require("./bg-aboutUs.png");
 export const articleOne = require("./articleOne.png");
 export const articleTwo = require("./articleTwo.png");
