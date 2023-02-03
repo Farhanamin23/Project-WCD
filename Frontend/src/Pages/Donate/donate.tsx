@@ -30,8 +30,8 @@ const Donate: React.FC = () => {
                }, []),
                title: item.attributes.title,
                description: item.attributes.description,
-               excerpt: res.data.data.attributes.excerpt,
-               slug: res.data.data.attributes.slug
+               excerpt: item.attributes.excerpt,
+               slug: item.attributes.slug
             })
             return acc
          }, []);
