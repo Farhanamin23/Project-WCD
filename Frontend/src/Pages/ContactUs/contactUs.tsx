@@ -33,7 +33,7 @@ const ContactUs: React.FC = () => {
       ,
       {
          onSuccess: (res: any) => {
-            setSuccessSubmit(res.data.data.attributes.firstname);
+            setSuccessSubmit(res.data.data.attributes.name);
             nameInputRef.current?.resetInputData();
             emailInputRef.current?.resetInputData();
             phoneInputRef.current?.resetInputData();

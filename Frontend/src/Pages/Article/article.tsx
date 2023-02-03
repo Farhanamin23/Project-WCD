@@ -16,12 +16,14 @@ const Article: React.FC = () => {
                 throw res
             }
 
-            const article = res.data.data.map((it: any) => {
+            const article: iArticle[] = res.data.data.map((it: any) => {
                 return {
                     id: it.id,
                     title: it.attributes.title,
                     description: it.attributes.description,
-                    imageSrc: baseUrl + it.attributes.image.data.attributes.url
+                    imageSrc: baseUrl + it.attributes.image.data.attributes.url,
+                    slug: it.attributes.slug,
+                    excerpt: it.attributes.excerpt
                 }
             })
 
@@ -47,9 +49,9 @@ const Article: React.FC = () => {
                         return (
                             <CardProgram
                                 title={it.title}
-                                description={it.description}
+                                description={it.excerpt}
                                 imageSrc={it.imageSrc}
-                                link={"/article/"+it.id}
+                                link={"/article/"+it.id + "/" + it.slug}
                             />
                         )
                     })

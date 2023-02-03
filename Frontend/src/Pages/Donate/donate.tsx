@@ -7,10 +7,12 @@ import SectionTitle from '../../component/sectionTitle';
 import DonateForm from './components/DonateForm';
 
 export interface iProgramShowcase {
+   excerpt: string;
    id: number,
    title: string;
    description: string;
    images: string[];
+   slug: string
 }
 
 const Donate: React.FC = () => {
@@ -27,7 +29,9 @@ const Donate: React.FC = () => {
                   return accImages
                }, []),
                title: item.attributes.title,
-               description: item.attributes.description
+               description: item.attributes.description,
+               excerpt: res.data.data.attributes.excerpt,
+               slug: res.data.data.attributes.slug
             })
             return acc
          }, []);
@@ -48,9 +52,9 @@ const Donate: React.FC = () => {
                      <CardProgram
                         key={it.id}
                         title={it.title}
-                        description={it.description}
+                        description={it.excerpt}
                         imageSrc={it.images[0]}
-                        linkReadMore={`/program-csr/${it.id}`}
+                        linkReadMore={`/program-csr/${it.id}/${it.slug}`}
                      />
                   )
                })

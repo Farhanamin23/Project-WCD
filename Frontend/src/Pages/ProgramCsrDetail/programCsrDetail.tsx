@@ -24,9 +24,11 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
             title: res.data.data.attributes.title,
             description: res.data.data.attributes.description,
             images: res.data.data.attributes.images.data.reduce((accImages: any, item: any) => {
-               accImages.push(baseUrl + item.attributes.url);
+               accImages.push(baseUrl + item.attributes.url)
                return accImages
             }, []),
+            excerpt: res.data.data.attributes.excerpt,
+            slug: res.data.data.attributes.slug
          }
          setIsError(false)
          setArticle(article)
@@ -52,7 +54,7 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
                         alt={`${programCsr?.title}`}
                      />
                      <div className="pr-7 pl-7 mx-auto pb-8 max-w-[1117px]">
-                        <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{programCsr?.description}</ReactMarkdown></p>
+                        <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{programCsr?.excerpt}</ReactMarkdown></p>
                      </div>
 
                      <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>

@@ -25,14 +25,14 @@ const App: React.FC = () => {
                   <Route path='/donate' element={<Donate />} />
                   <Route path="/about-us" element={<AboutUs />} />
                   <Route path='/program' element={<Programs />} />
-                  <Route path='/program/:identifier' element={<ProgramDetail />} />
+                  <Route path='/program/:identifier/:slug' element={<ProgramDetail />} />
                   <Route path='/event' element={<Events />} />
                   <Route path='/article' element={<Article />} />
-                  <Route path='/article/:id' element={<ArticleDetail />} />
-                  <Route path='/event/:identifier' element={<EventDetail />} />
+                  <Route path='/article/:id/:slug' element={<ArticleDetail />} />
+                  <Route path='/event/:identifier/:slug' element={<EventDetail />} />
                   <Route path='/contact-us' element={<ContactUs />} />
                   <Route path="/program-csr" element={<Donate />} />
-                  <Route path="/program-csr/:id" element={<ProgramCsrDetail />} />
+                  <Route path="/program-csr/:id/:slug" element={<ProgramCsrDetail />} />
                   <Route path="/team" element={<MeetTeam />} />
                   <Route path="*" element={<NotFound />} />
                </Routes>

@@ -37,7 +37,9 @@ const EventDetail: React.FC<any> = (props) => {
                 description: res.data.data.attributes.description,
                 date: _date,
                 imageSrc: baseUrl + res.data.data.attributes.image.data.attributes.url,
-                detailEvent: res.data.data.attributes.detailEvent
+                detailEvent: res.data.data.attributes.detailEvent,
+                slug: res.data.data.attributes.slug,
+                excerpt: res.data.data.attributes.excerpt
             }
 
             setEvent(event)

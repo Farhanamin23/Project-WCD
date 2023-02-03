@@ -19,7 +19,9 @@ const Programs: React.FC = () => {
                     id: it.id,
                     title: it.attributes.title,
                     description: it.attributes.description,
-                    imageSrc: baseUrl + it.attributes.image.data[0].attributes.url
+                    imageSrc: baseUrl + it.attributes.image.data[0].attributes.url,
+                    slug: it.attributes.slug,
+                    excerpt: it.attributes.excerpt
                 }
             })
 
@@ -45,9 +47,9 @@ const Programs: React.FC = () => {
                         return (
                             <CardProgram
                                 title={it.title}
-                                description={it.description}
+                                description={it.excerpt}
                                 imageSrc={it.imageSrc}
-                                link={"/program/"+it.id}
+                                link={"/program/"+it.id + "/" + it.slug}
                             />
                         )
                     })

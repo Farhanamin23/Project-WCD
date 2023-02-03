@@ -26,7 +26,9 @@ const ProgramDetail: React.FC<any> = (props) => {
                 programImages: res.data.data.attributes.image.data?.slice(1).reduce((acc: string[], imageData: any) => {
                     acc.push(baseUrl + imageData.attributes.url)
                     return acc
-                }, [])
+                }, []),
+                excerpt: res.data.data.attributes.excerpt,
+                slug: res.data.data.attributes.slug
             }
 
             setProgram(program)

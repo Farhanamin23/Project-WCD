@@ -24,7 +24,9 @@ const Event: React.FC = () => {
                     title: it.attributes.title,
                     description: it.attributes.description,
                     date: _date,
-                    imageSrc: baseUrl + it.attributes.image.data.attributes.url
+                    imageSrc: baseUrl + it.attributes.image.data.attributes.url,
+                    excerpt: it.attributes.excerpt,
+                    slug: it.attributes.slug
                 }
             })
             setEvents(events)
@@ -53,10 +55,10 @@ const Event: React.FC = () => {
                                 <CardEvent
                                     key={it.id}
                                     title={it.title}
-                                    description={it.description}
+                                    description={it.excerpt}
                                     imageSrc={it.imageSrc}
                                     date={it.date}
-                                    onClick={() => navigate(`${it.id}`)}
+                                    onClick={() => navigate(`${it.id}/${it.slug}`)}
                                 />
                             )
                         })

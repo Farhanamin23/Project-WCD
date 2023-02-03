@@ -72,7 +72,7 @@ const HomeBanner = () => {
                         Save the date! Next world cleanup day is on 16th of September
                      </p>
 
-                     <Link to="/" className="hidden md:block self-start mt-[32px]">
+                     <Link to="/event" className="hidden md:block self-start mt-[32px]">
                         <ActionButton title={"Join the movement"} />
                      </Link>
                   </div>
