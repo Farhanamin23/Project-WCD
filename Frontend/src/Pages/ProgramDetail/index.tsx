@@ -41,7 +41,7 @@ const ProgramDetail: React.FC<any> = (props) => {
         return () => { }
     }, [])
     return (
-        <main className='flex-grow px-3 pb-10 lg:pb-24 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")]'>
+        <main className='flex-grow px-3 pb-10 lg:pb-24 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
                 <div className='flex flex-col justify-center items-center mt-4 lg:mb-6 lg:mt-16'>
                     <p className="font-primary text-p-primary text-xl lg:text-4xl">Our Program</p>

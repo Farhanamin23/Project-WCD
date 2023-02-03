@@ -9,6 +9,7 @@ import AboutUs from "./AboutUs/aboutUs";
 import Article from "./Article/article";
 import MeetTeam from "./MeetTeam/meetTeam";
 import NotFound from './Notfound/notFound';
+import ProgramCsrDetail from './ProgramCsrDetail/programCsrDetail';
 
 export { 
     Home, 
@@ -21,5 +22,6 @@ export {
     Events, 
     EventDetail, 
     ProgramDetail,
-    NotFound
+    NotFound,
+    ProgramCsrDetail
 };

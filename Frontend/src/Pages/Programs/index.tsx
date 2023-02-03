@@ -21,10 +21,10 @@ const Programs: React.FC = () => {
                     id: it.id,
                     title: it.attributes.title,
                     description: it.attributes.description,
-                    imageSrc: baseUrl + it.attributes.image.data.attributes.url
+                    imageSrc: baseUrl + it.attributes.image.data[0].attributes.url
                 }
             })
-
+            
             setPrograms(programs)
         } catch (error) {
         }
@@ -43,13 +43,13 @@ const Programs: React.FC = () => {
                     <div className="flex  w-[105px] h-[6px] bg-p-yellow lg:w-[190px]"></div>
                 </div>
                 {
-                    programs?.map((it: iProgram) => {
+                    programs?.map((program: iProgram) => {
                         return (
                             <CardProgram
-                                title={it.title}
-                                description={it.description}
-                                imageSrc={it.imageSrc}
-                                onClick={() => { navigate(`${it.id}`) }}
+                                title={program.title}
+                                description={program.description}
+                                imageSrc={program.imageSrc}
+                                onClick={() => { navigate(`${program.id}`) }}
                             />
                         )
                     })

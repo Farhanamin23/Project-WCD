@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { adapter, baseUrl } from '../../actions/global'
-import ActionButton from '../../component/actionButton'
-import PhoneInput from '../../component/phoneInput'
-import TextInput from '../../component/textInput'
-import { useRegisterEvent } from '../../hooks'
-import { iEvent } from '../../interface'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { adapter, baseUrl } from '../../actions/global';
+import ActionButton from '../../component/actionButton';
+import PhoneInput from '../../component/phoneInput';
+import TextInput from '../../component/textInput';
+import { useRegisterEvent } from '../../hooks';
+import { iEvent } from '../../interface';
 
 const EventDetail: React.FC<any> = (props) => {
     const [event, setEvent] = useState<iEvent>()
