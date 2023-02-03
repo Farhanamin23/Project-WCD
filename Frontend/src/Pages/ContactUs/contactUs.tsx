@@ -23,8 +23,7 @@ const ContactUs: React.FC = () => {
       async () => {
          return await adapter.post('/getintouches', {
             data: {
-               firstname: nameInputRef.current?.getInputData(),
-               lastname: nameInputRef.current?.getInputData(),
+               name: nameInputRef.current?.getInputData(),
                email: emailInputRef.current?.getInputData(),
                phonenumber: phoneInputRef.current?.getInputData(),
                description: descInputRef.current?.getInputData()
