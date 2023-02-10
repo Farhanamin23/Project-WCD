@@ -59,14 +59,14 @@ const Donate: React.FC = () => {
                   )
                })
             }
-            {/* {
+            {
                !!programs && (
                   <>
                      <SectionTitle title="Donate" />
                      <DonateForm eventList={programs || []} />
                   </>
                )
-            } */}
+            }
 
 
          </div>

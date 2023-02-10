@@ -57,12 +57,12 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
                         <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{programCsr?.excerpt}</ReactMarkdown></p>
                      </div>
 
-                     {/* <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>
+                     <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>
                         <SectionTitle title="Donate" />
                         <DonateForm
                            eventList={[programCsr]}
                         />
-                     </div> */}
+                     </div>
 
                   </div>
                </section>
