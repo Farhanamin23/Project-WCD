@@ -36,7 +36,7 @@ const Programs: React.FC = () => {
     }, [])
 
     return (
-        <main className='flex-grow px-3 pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
+        <main className='flex-grow px-3 pb-10 bg-[url("/public/img/bg-page-donate.webp")] md:bg-[url("/public/img/bg-page-donate-desktop.webp")] bg-cover'>
             <div className='pt-16  max-w-5xl lg:pt-[75px] mx-auto '>
                 <div className='flex flex-col justify-center items-center mt-4 lg:mb-6 lg:mt-16'>
                     <p className="font-primary text-p-primary text-xl lg:text-4xl">Our Program</p>

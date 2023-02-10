@@ -15,16 +15,21 @@ const Home: React.FC = () => {
       <main className='flex-grow pt-14 lg:pt-[75px]'>
          <div>
             <HomeBanner />
-            <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] bg-cover bg-no-repeat'>
-               <SearchEvent />
-               <LatestNews />
+            
+            <div className='bg-[url("/public/img/bg-page-gradient.webp")] md:bg-[url("/public/img/bg-page-gradient-desktop.webp")] bg-cover bg-no-repeat'>
+               {/* <SearchEvent /> */}
+               <NearestEvent />
                <Gallery />
+               <Sponsor />
+               <Partner />
             </div>
 
-            <NearestEvent />
-            <Founder />
-            <Sponsor />
-            <Partner />
+            <div className='bg-[url("/public/img/bg-page-gradient.webp")] md:bg-[url("/public/img/bg-page-gradient-desktop.webp")] bg-cover bg-no-repeat bg-center'>
+               <LatestNews />
+            </div>
+            
+            {/* <Founder /> */}
+            
          </div>
 
 

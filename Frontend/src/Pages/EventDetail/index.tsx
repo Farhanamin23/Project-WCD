@@ -63,7 +63,7 @@ const EventDetail: React.FC<any> = (props) => {
     }
 
     return (
-        <main className='flex-grow px-3 pb-24 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
+        <main className='flex-grow px-3 pb-24 bg-[url("/public/img/bg-page-donate.webp")] md:bg-[url("/public/img/bg-page-donate-desktop.webp")] bg-cover'>
             <div className='pt-16  max-w-[1238px] lg:pt-[75px] mx-auto '>
                 <div className='flex flex-col justify-center items-center mt-4 lg:mb-6 lg:mt-16'>
                     <p className="font-primary text-p-primary text-xl lg:text-4xl">Our Events</p>
@@ -81,7 +81,7 @@ const EventDetail: React.FC<any> = (props) => {
                         </div>
                     </section>
 
-                    <div className='flex flex-col bg-[url("/public/img/bg-rounds-color.png")] bg-contain bg-no-repeat bg-top-left'>
+                    <div className='flex flex-col bg-[url("/public/img/bg-rounds-color.webp")] bg-contain bg-no-repeat bg-top-left'>
                         <section className='self-end max-w-[525px] w-[100%] lg:mt-20'>
                             <div className='h-[400px] mt-12'>
                                 <div className='p-4 bg-p-yellow/70 backdrop-blur-sm rounded-lg'>

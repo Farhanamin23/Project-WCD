@@ -59,7 +59,7 @@ const Gallery = () => {
             <SectionTitle title='Gallery' />
             <div className="max-w-[1102px] mx-auto gallery-section video-list">
                {
-                  videos?.length && (
+                  !!videos?.length && (
                      <Swiper
                         initialSlide={videos?.length < 3 ? 0 : 1}
                         loop={videos?.length < 3 ? false : true}
@@ -91,7 +91,7 @@ const Gallery = () => {
 
             <div className="max-w-[1102px] mx-auto gallery-section">
                {
-                  galleries?.length && (
+                  !!galleries?.length && (
                      <Swiper
                         initialSlide={1}
                         loop={true}

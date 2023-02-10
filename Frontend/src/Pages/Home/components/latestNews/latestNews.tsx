@@ -52,7 +52,7 @@ const LatestNews = () => {
 
    return (
       <section>
-         <div className="max-w-[1102px] mx-auto w-[100%]">
+         <div className="max-w-[1102px] mx-auto w-[100%] py-[23px] lg:py-[54px]">
             <SectionTitle title="Latest News" />
 
             {

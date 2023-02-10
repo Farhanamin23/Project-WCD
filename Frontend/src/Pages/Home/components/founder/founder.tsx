@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ScreenContext } from "../../../../App";
-import { bgFounderCl, bgFounderGs } from "../../../../assets";
 import SectionTitle from "../../../../component/sectionTitle";
 import { useQuery } from 'react-query';
 import { adapter, baseUrl } from "../../../../actions/global";
@@ -37,21 +36,7 @@ const Founder = () => {
          retry: true
       }
    );
-
-   const founder = [
-      {
-         id:1,
-         name: 'Andy Bahari',
-         position: 'Country Leader',
-         image: bgFounderCl
-      },
-      {
-         id:2,
-         name: 'Septiany Punti Dewi',
-         position: 'General Secretary',
-         image: bgFounderGs
-      }
-   ]
+   
    return (
       <section>
          <div className={`

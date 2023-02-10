@@ -41,7 +41,7 @@ const ArticleDetail: React.FC<any> = (props) => {
             {
                 article && (
                     <section>
-                        <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] pt-28 text-center md:mx-auto bg-cover'>
+                        <div className='bg-[url("/public/img/bg-page-gradient.webp")] md:bg-[url("/public/img/bg-page-gradient-desktop.webp")] pt-28 text-center md:mx-auto bg-cover'>
                             <h1 className="text-center font-primary text-[20px] md:text-[48px] text-p-primary max-w-5xl mx-auto">{article?.title}</h1>
                             <img
                                 className="mx-auto mt-6 mb-9 sm:w-[809px] sm:h-[455px] sm:my-[79px]"

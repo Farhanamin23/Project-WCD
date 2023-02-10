@@ -21,8 +21,8 @@ module.exports = {
         'p-neutral': '#344054'
       },
       backgroundImage: {
-        'dot-pattern': "url('/public/img/bg-dot.png')",
-        'mascot': "url('/public/img/bg-indonesia-bersih-transparent.png')"
+        'dot-pattern': "url('/public/img/bg-dot.webp')",
+        'mascot': "url('/public/img/bg-indonesia-bersih-transparent.webp')"
       }
     },
   },

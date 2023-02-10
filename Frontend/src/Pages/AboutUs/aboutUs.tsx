@@ -5,7 +5,7 @@ const AboutUs: React.FC = () => {
   return (
     <main className="flex-grow">
       <section>
-        <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] pt-28 text-center md:mx-auto'>
+        <div className='bg-[url("/public/img/bg-page-gradient.webp")] md:bg-[url("/public/img/bg-page-gradient-desktop.webp")] pt-28 text-center md:mx-auto'>
           <SectionTitle title="World Cleanup Day" />
           <img
             className="mx-auto mt-6 mb-9 sm:w-[809px] sm:h-[455px] sm:my-[79px]"

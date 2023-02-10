@@ -1,6 +1,6 @@
 import ActionButton from "../../../../component/actionButton";
 import PhoneInput from "../../../../component/phoneInput";
-import SectionTitle from "../../../../component/sectionTitle";
+import SectionTitle, { TitleColor } from "../../../../component/sectionTitle";
 import TextInput from "../../../../component/textInput";
 
 import { useQuery } from 'react-query';
@@ -74,14 +74,14 @@ const NearestEvent = () => {
 
    return (
       <section>
-         <div className="bg-p-primary py-[56px]"  id="nearestEvent">
+         <div className="bg-p-primary py-[56px] lg:pt-[150px]"  id="nearestEvent">
             <div className="max-w-[1102px] mx-auto">
-               <SectionTitle title={'Nearest Event'} color={'text-white'} />
+               <SectionTitle title={'Nearest Event'} color={TitleColor.white} />
                {
                   nearestEvent && (
                      <div className="px-[24px]">
                         <div className="
-                     bg-[url(/public/img/bg-abstract-kuning.png)]
+                     bg-[url(/public/img/bg-abstract-kuning.webp)]
                      bg-[left_0px_top_-50px]
                      md:bg-[left_0px_top_-50px]
                      bg-no-repeat
@@ -90,7 +90,7 @@ const NearestEvent = () => {
                   ">
                            <div className="
                         flex flex-col md:flex-row 
-                        bg-[url(/public/img/bg-abstract-biru.png)]
+                        bg-[url(/public/img/bg-abstract-biru.webp)]
                         bg-[left_-60px_top_-32px]
                         md:bg-[left_-60px_top_-32px]
                         bg-no-repeat

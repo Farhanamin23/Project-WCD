@@ -60,7 +60,7 @@ const HomeBanner = () => {
          bg-no-repeat 
          bg-cover
          `} style={{ backgroundImage: `url(${bannerImage})` }}>
-            <div className="min-h-[279px] w-[100%] md:max-h-[80vh] bg-[url(/public/img/bg-banner.png)] bg-no-repeat bg-cover flex items-center">
+            <div className="min-h-[279px] w-[100%] md:max-h-[80vh] bg-[url(/public/img/bg-banner.webp)] bg-no-repeat bg-cover flex items-center">
                <div className="w-[38%]">
                   <div className="ml-[18px] md:ml-[62px] flex flex-col justify-center min-h-[50vw]">
                      <h1 className="text-[16px] font-primary md:text-[40px] text-p-yellow">
@@ -83,7 +83,7 @@ const HomeBanner = () => {
                   <img src={iconProgressWorld} className="self-center mr-[12px] w-[25px] lg:w-[80px]" />
                   <div className="flex flex-col">
                      <span className="font-primary text-[16px] lg:text-[64px] text-white"><CountUp end={progressData?.countryCount || 0} enableScrollSpy /></span>
-                     <span className="font-primary text-[12px] lg:text-[24px] text-white">Country</span>
+                     <span className="font-primary text-[12px] lg:text-[24px] text-white">Provinces</span>
                   </div>
                </div>
 
@@ -99,7 +99,7 @@ const HomeBanner = () => {
                   <img src={iconProgressTrash} className="self-center mr-[12px] w-[30px] lg:w-[94px]" />
                   <div className="flex flex-col">
                      <span className="font-primary text-[16px] lg:text-[64px] text-white"><CountUp end={progressData?.wasteCounter || 0} enableScrollSpy />k</span>
-                     <span className="font-primary text-[12px] lg:text-[24px] text-white">of Waste</span>
+                     <span className="font-primary text-[12px] lg:text-[24px] text-white">kg of Waste</span>
                   </div>
                </div>
 

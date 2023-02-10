@@ -31,7 +31,7 @@ export default function MeetTeam() {
    );
 
    return (
-      <main className='flex-grow px-3 pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover bg-center'>
+      <main className='flex-grow px-3 pb-10 bg-[url("/public/img/bg-page-donate.webp")] md:bg-[url("/public/img/bg-page-donate-desktop.webp")] bg-cover bg-center'>
          <div className="pt-[120px] mx-auto flex flex-col">
             <SectionTitle title={'Meet the Team'} />
             <div className="grid grid-cols-2 gap-x-8 md:gap-y-[85px] gap-y-[32px] md:grid-cols-3 pt-[32px] md:pt-[90px] max-w-[1238px] w-[100%] lg:pt-[75px] mx-auto">

@@ -71,20 +71,20 @@ const Footer: React.FC = () => {
             <div className='flex flex-row w-[100%] md:w-[auto] md:justify-start mb-[50px]'>
                <div className='flex flex-row items-center mr-[20px] md:mr-[60px] md:min-w-[301px]'>
                   <div>
-                     <img src={logoBig} className="w-[60px] min-w-[60px] aspect-auto md:w-[160px]" />
+                     <img src={logoBig} className="w-[60px] min-w-[60px] aspect-auto md:w-[160px] px-[3px] md:px-[12px]" />
                   </div>
                   <div className='h-[56px] md:h-[114px] w-[1px] mr-[8px] md:mr-[24px] bg-white' />
-                  <div>
+                  <div className='min-w-[56px]'>
                      <p className='text-[10px] font-primary text-white md:text-[16px] mb-[4px]'>Powered by</p>
                      <img src={logoSalt} className="w-[55px] aspect-auto md:w-[117px]" />
                   </div>
                </div>
 
-               <div className='flex flex-col md:max-w-[210px] md:pr-[21px]'>
-                  <h5 className='font-primary font-[400] text-[12px] md:text-[20px] text-white'>LET’S DO IT WORLD HEADQUARERS</h5>
-                  <p className='font-secondary text-[10px] md:text-[16px] text-white'>REQ CODE 80562203</p>
-                  <p className='font-secondary text-[10px] md:text-[16px] text-white'>ROOSIRANTSI 3, 10119 TALLINN, ESTONIA</p>
-                  <p className='font-secondary font-[700] text-[10px] md:text-[14px] text-white'>INFO@WORLDCLEANUPDAY.ORG</p>
+               <div className='flex flex-col min-w-[56px] md:min-w-[190px] md:max-w-[210px] md:pr-[21px]'>
+                  <h5 className='font-primary font-[400] text-[12px] md:text-[20px] text-white'>LET’S DO IT WORLD INDONESIA HEADQUARERS</h5>
+                  <p className='font-secondary text-[10px] md:text-[16px] text-white'>Sudirman Somerset</p>
+                  <p className='font-secondary text-[10px] md:text-[16px] text-white'>Jl. Karet Pasar Baru Barat V No.92, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10250</p>
+                  {/* <p className='font-secondary font-[700] text-[10px] md:text-[14px] text-white'>INFO@WORLDCLEANUPDAY.ORG</p> */}
                </div>
             </div>
 

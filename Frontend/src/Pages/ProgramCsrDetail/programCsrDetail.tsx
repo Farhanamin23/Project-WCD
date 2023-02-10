@@ -46,7 +46,7 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
          {
             !!programCsr && (
                <section>
-                  <div className='bg-[url("/public/img/bg-page-gradient.png")] md:bg-[url("/public/img/bg-page-gradient-desktop.png")] pt-28 text-center md:mx-auto bg-cover '>
+                  <div className='bg-[url("/public/img/bg-page-gradient.webp")] md:bg-[url("/public/img/bg-page-gradient-desktop.webp")] pt-28 text-center md:mx-auto bg-cover '>
                      <h1 className="text-center font-primary text-[20px] md:text-[48px] text-p-primary max-w-5xl mx-auto">{programCsr?.title}</h1>
                      <img
                         className="mx-auto mt-6 mb-9 sm:w-[809px] sm:h-[455px] sm:my-[79px]"
@@ -57,12 +57,12 @@ const ProgramCsrDetail: React.FC<any> = (props) => {
                         <p className="font-secondary text-left text-xs text-p-neutral lg:text-xl"><ReactMarkdown>{programCsr?.excerpt}</ReactMarkdown></p>
                      </div>
 
-                     <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>
+                     {/* <div className='py-[20px] md:py-[80px] w-[100%] max-w-5xl mx-auto px-[24px]'>
                         <SectionTitle title="Donate" />
                         <DonateForm
                            eventList={[programCsr]}
                         />
-                     </div>
+                     </div> */}
 
                   </div>
                </section>

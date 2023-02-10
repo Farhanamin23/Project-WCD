@@ -44,7 +44,7 @@ const Donate: React.FC = () => {
    );
 
    return (
-      <main className='flex-grow px-[16px] pb-10 bg-[url("/public/img/bg-page-donate.png")] md:bg-[url("/public/img/bg-page-donate-desktop.png")] bg-cover'>
+      <main className='flex-grow px-[16px] pb-10 bg-[url("/public/img/bg-page-donate.webp")] md:bg-[url("/public/img/bg-page-donate-desktop.webp")] bg-cover'>
          <div className='pt-[80px] md:pt-[150px] max-w-5xl mx-auto'>
             {
                programs?.map(it => {
@@ -59,14 +59,14 @@ const Donate: React.FC = () => {
                   )
                })
             }
-            {
+            {/* {
                !!programs && (
                   <>
                      <SectionTitle title="Donate" />
                      <DonateForm eventList={programs || []} />
                   </>
                )
-            }
+            } */}
 
 
          </div>
